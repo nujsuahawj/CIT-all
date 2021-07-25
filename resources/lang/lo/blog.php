@@ -1,0 +1,92 @@
+<?php
+    /*
+    $langs = DB::table('blog_categories')->select('lang_key','name_la')->get();
+    $output = array();
+
+    foreach ($langs as $lang)
+    {
+        $output[$lang->lang_key] = $lang->name_la;
+    }
+    return $output;
+    */
+
+    return [
+        'dashboardblog'=>'Dashboard Website',
+        'post'=>'ບົດຄວາມ',
+        'postcategory'=>'ໝວດໝູ່ບົດຄວາມ',
+        'tag'=>'ແທັກ',
+        'tagname'=>'ຊື່ແທັກ',
+        'parent_id'=>'ໝວດໝູ່ຫຼັກ',
+        'slug'=>'Slug',
+        'page'=>'ໜ້າເວັບ',
+        'slider'=>'ພາບສະໄລ',
+        'image'=>'ຮູບພາບ',
+        'title'=>'ພາດຫົວເລື່ອງ',
+        'view'=>'ຍອດເບິ່ງ',
+        'des'=>'ລາຍລະອຽດ',
+        'status'=>'ສະຖານະ',
+        'published'=>'ເຜີຍແຜ່ແລ້ວ',
+        'unpublish'=>'ບໍ່ທັນເຜີຍແຜ່',
+        'category'=>'ໝວດໝູ່',
+        'choosefile'=>'ເລືອກຟາຍ',
+        'texttitle'=>'ຂໍ້ຄວາມໜ້າເວັບ',
+        'active'=>'ໃຊ້ງານ',
+        'inactive'=>'ບໍ່ໃຊ້ງານ',
+        'title_website'=>'ບໍລິສັດ ໝາກເກົາລາວ ຂາອອກ-ຂາເຂົາ ຈຳກັດຜູ້ດຽວ',
+        'des'=>'ລາຍລະອຽດ',
+        'language'=>'ເລືອກພາສາ',
+        'home'=>'ໜ້າແລກ',
+        'about'=>'ກ່ຽວກັບ',
+        'portfolio'=>'ພາບການເຄື່ອນໄຫວ',
+        'contact'=>'ຕິດຕໍ່ພົວພັນ',
+        'email'=>'ທີຢູ່ອີເມວ',
+        'hotline'=>'ໂທເລີຍ',
+        'blogs'=>'ການເຄື່ອນໄຫວ',
+        'service'=>'ການບໍລິການ',
+        'quick_link'=>'ເມນູ',
+        'blogdetail'=>'ລາຍລະອຽດການເຄື່ອນໄຫວ',
+        'testimonial'=>'ຄວາມຄິດເຫັນປະຊາຊົນ',
+        'message'=>'ຂໍ້ຄວາມ',
+        'subject'=>'ຫົວເລື່ອງ',
+        'send_our_message_we_will_call_back'=>'ທ່ານສາມາດສົ່ງຂໍ້ຄວາມຫາພວກເຮົາ ແລ້ວທາງເຮົາຈະປະສານກັບພາຍຫຼັງ',
+        'message_detail'=>'ລາຍລະອຽດຂໍ້ຄວາມ',
+        'send_message'=>'ສົ່ງຂໍ້ຄວາມ',
+        'unread'=>'ຍັງບໍ່ອ່ານ',
+        'read'=>'ອ່ານແລ້ວ',
+        'short_des'=>'ລາຍລະອຽດສັ້ນ',
+        'follow_us'=>'ຕິດຕາມພວກເຮົາ',
+        'you_can_follow_us_with_social_media'=>'ທ່ານສາມາດຕິດຕາມພວກເຮົາໄດ້ ຜ່ານສື່ສັງຄົມອອນລາຍ ຫຼື ສອບຖາມຂໍ້ມູນໂດຍກົງ ເພື່ອຈະໄດ້ຮັບ ວະທີການປູກຝັງທີ່ຖືກຕ້ອງ ແລະ ໄດ້ຮັບໝາກຜົນດີ!',
+        'pagedetail'=>'ລາຍລະອຽດຂໍ້ມູນ',
+        
+        'terms'=>'ເງື່ອນໄຂນຳໃຊ້',
+        'my_account'=>'ບັນຊີຂອງຂ້ອຍ',
+        'sign_in'=>'ເຂົ້າລະບົບ',
+        'sign_out'=>'ອອກລະບົບ',
+        'lak'=>'ກີບ',
+        'thb'=>'ບາດ',
+        'usd'=>'ໂດລາ',
+        'la'=>'ພາສາລາວ',
+        'en'=>'ພາສາອັງກິດ',
+        'shop'=>'ຜະລິດຕະພັນ',
+        'search_for_products'=>'ຄົ້ນຫາສິນຄ້າ',
+        'cart'=>'ກະຕ່າສິນຄ້າ',
+        'shopping_cart'=>'ລາຍການເລືອກຊື້',
+        'checkout'=>'ຊຳລະເງິນ',
+        'wishlist'=>'ລາຍການທີມັກ',
+        'follow_us'=>'ຕິດຕາມພວກເຮົາ',
+        'download_app'=>'ດາວໂຫຼດແອັບ',
+        'menu'=>'ເມນູ',
+        'customers'=>'ລູກຄ້າພວກເຮົາ',
+        'projects'=>'ໂຄງການ',
+        'success_cases'=>'ຜົນສຳເລັດ',
+        'call'=>'ໂທສອບຖາມ',
+        'product_detail'=>'ລາຍລະອຽດສິນຄ້າ',
+        'description'=>'ລາຍລະອຽດ',
+        'review'=>'ຕີລາຄາ',
+        'product_description'=>'ລາຍລະອຽດສິນຄ້າ',
+        'recommended_products'=>'ສິນຄ້າແນະນຳ',
+        'add_to_cart'=>'ເພີ່ມໃສ່ກະຕ່າ',
+        'service_detail'=>'ລາຍລະອຽດການບໍລິການ',
+        'sorry_a_lot_is_developing'=>'ຂໍໂທດຫຼາຍໆ ກຳລັງຢູ່ໃນຊ່ວງພັດທະນາ'
+    ];
+?>
