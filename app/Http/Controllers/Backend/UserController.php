@@ -45,7 +45,7 @@ class UserController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'phone'=>'required|unique:users,phone|min:10',
+            'phone'=>'required|unique:users,phone|min:8',
             'email'=>'required|email',
             'password'=>'required|min:6',
             'confirmpassword'=>'required|same:password',
@@ -56,7 +56,7 @@ class UserController extends Controller
             'name.required'=>'ກະລຸນາໃສ່ຊື່ຜູ້ໃຊ່ກ່ອນ!',
             'phone.required'=>'ກະລຸນາໃສ່ເບີໂທລະສັບກ່ອນ!',
             'phone.unique'=>'ເບີໂທນີ້ ໄດ້ມີໃນລະບົບແລ້ວ!',
-            'phone.min'=>'ເບີໂທຕ້ອງແມ່ນ 10 ຕົວເລກ! ຕົວຢ່າງ: 20XXXXXXXX',
+            'phone.min'=>'ເບີໂທຕ້ອງແມ່ນ 8 ຕົວເລກ! ຕົວຢ່າງ: XXXXXXXX',
             'email.required'=>'ກະລຸນາໃສ່ Email ກ່ອນ!',
             'email.email'=>'ຮູບແບບ Email ບໍ່ຖືກຕ້ອງ!',
             'password.required'=>'ໃສ່ລະຫັດຜ່ານກ່ອນ!',
@@ -117,7 +117,7 @@ class UserController extends Controller
         $user = User::find($id);
         $request->validate([
             'name' => 'required',
-            'phone'=>'required|min:10',
+            'phone'=>'required|min:8',
             'email'=>'required|email',
             'emp_id'=>'required',
             //'branh_id'=>'required',
@@ -125,7 +125,7 @@ class UserController extends Controller
         ],[
             'name.required'=>'ກະລຸນາໃສ່ຊື່ຜູ້ໃຊ່ກ່ອນ!',
             'phone.required'=>'ກະລຸນາໃສ່ເບີໂທລະສັບກ່ອນ!',
-            'phone.min'=>'ເບີໂທຕ້ອງແມ່ນ 10 ຕົວເລກ! ຕົວຢ່າງ: 20XXXXXXXX',
+            'phone.min'=>'ເບີໂທຕ້ອງແມ່ນ 8 ຕົວເລກ! ຕົວຢ່າງ: XXXXXXXX',
             'email.required'=>'ກະລຸນາໃສ່ Email ກ່ອນ!',
             'email.email'=>'ຮູບແບບ Email ບໍ່ຖືກຕ້ອງ!',
             'confirmpassword.required'=>'ກະລຸນາຢືນຢັນລະຫັດຜ່ານຄືນກ່ອນ!',

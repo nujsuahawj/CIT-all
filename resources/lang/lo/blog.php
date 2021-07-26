@@ -87,6 +87,8 @@
         'recommended_products'=>'ສິນຄ້າແນະນຳ',
         'add_to_cart'=>'ເພີ່ມໃສ່ກະຕ່າ',
         'service_detail'=>'ລາຍລະອຽດການບໍລິການ',
-        'sorry_a_lot_is_developing'=>'ຂໍໂທດຫຼາຍໆ ກຳລັງຢູ່ໃນຊ່ວງພັດທະນາ'
+        'sorry_a_lot_is_developing'=>'ຂໍໂທດຫຼາຍໆ ກຳລັງຢູ່ໃນຊ່ວງພັດທະນາ',
+        'gov_customers'=>'ພາກລັດ',
+        'organization_customers'=>'ພາກເອກະຊົນ'
     ];
 ?>

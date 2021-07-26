@@ -23,9 +23,10 @@ class HomeComponent extends Component
                     ->orderBy('id','desc')
                     ->where('trash',0)->where('image', '<>', '')
                     ->paginate(12);
-        $customers = Customer::select('image')->orderBy('id','desc')->get();
+        $gov_customers = Customer::select('image')->orderBy('id','desc')->where('customer_type_id',1)->get();
+        $original_customers = Customer::select('image')->orderBy('id','desc')->where('customer_type_id',2)->get();
 
-        return view('livewire.frontend.home-component', compact('sliders','services','products','customers'))
+        return view('livewire.frontend.home-component', compact('sliders','services','products','gov_customers','original_customers'))
         ->layout('layouts.frontend.base-frontend');
     }
 }

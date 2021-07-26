@@ -21,9 +21,23 @@
         </div>
     </div>
     <!-- Breadcrumb End -->
-   <!-- Service Start -->
-   <div class="container-fluid pt-5 pb-3">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{{__('blog.customers')}}</span></h2>
+    <!-- Service Start -->
+    <div class="container-fluid pt-5 pb-3">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{{__('blog.gov_customers')}}</span></h2>
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="owl-carousel vendor-carousel">
+
+                    @foreach ($gov_customers as $item)
+                    <div class="bg-light p-4">
+                        <img src="{{asset($item->image)}}" alt="">
+                    </div>
+                    @endforeach
+                    
+                </div>
+            </div>
+        </div>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{{__('blog.organization_customers')}}</span></h2>
         <div class="row px-xl-5">
             
             @foreach ($customers as $item)

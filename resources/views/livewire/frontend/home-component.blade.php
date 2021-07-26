@@ -211,7 +211,20 @@
             <div class="col">
                 <div class="owl-carousel vendor-carousel">
 
-                    @foreach ($customers as $item)
+                    @foreach ($gov_customers as $item)
+                    <div class="bg-light p-4">
+                        <img src="{{asset($item->image)}}" alt="">
+                    </div>
+                    @endforeach
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="owl-carousel vendor-carousel">
+
+                    @foreach ($original_customers as $item)
                     <div class="bg-light p-4">
                         <img src="{{asset($item->image)}}" alt="">
                     </div>

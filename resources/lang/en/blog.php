@@ -86,6 +86,8 @@
         'recommended_products'=>'Recommended products',
         'add_to_cart'=>'Add to cart',
         'service_detail'=>'Service description',
-        'sorry_a_lot_is_developing'=>'Sorry a lot is developing'
+        'sorry_a_lot_is_developing'=>'Sorry a lot is developing',
+        'gov_customers'=>'Goverment',
+        'organization_customers'=>'Organization'
     ];
 ?>
