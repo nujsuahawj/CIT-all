@@ -70,6 +70,20 @@
                 </ul>
               </li>
 
+              <!-- Module Setting-->
+              <li class="dropdown-submenu dropdown-hover">
+                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">{{__('lang.module_setting')}}</a>
+                <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                  <li><a href="{{route('depart.index')}}" class="dropdown-item">{{__('lang.depart')}}</a></li>
+                  <li><a href="{{route('province.index')}}" class="dropdown-item">{{__('lang.province')}}</a></li>
+                  <li><a href="{{route('district.index')}}" class="dropdown-item">{{__('lang.district')}}</a></li>
+                  <li><a href="{{route('village.index')}}" class="dropdown-item">{{__('lang.village')}}</a></li>
+                  <li><a href="{{route('marries.index')}}" class="dropdown-item">{{__('lang.marriesstatus')}}</a></li>
+                  <li><a href="{{route('position.index')}}" class="dropdown-item">{{__('lang.position')}}</a></li>
+                  <li class="dropdown-divider"></li>
+                </ul>
+              </li>
+
               <!-- Module System-->
               <li class="dropdown-submenu dropdown-hover">
                 <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">{{__('lang.module_system')}}</a>
@@ -86,20 +100,6 @@
           <li class="nav-item">
             <a href="{{route('dashboard.index')}}" class="nav-link">{{__('lang.dashboard')}}</a>
           </li>-->
-
-          <!--Condition-->
-          <li class="nav-item dropdown">
-            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="false" class="nav-link dropdown-toggle">{{__('lang.condition')}}</a>
-            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
-              <li><a href="{{route('depart.index')}}" class="dropdown-item">{{__('lang.depart')}}</a></li>
-              <li><a href="{{route('province.index')}}" class="dropdown-item">{{__('lang.province')}}</a></li>
-              <li><a href="{{route('district.index')}}" class="dropdown-item">{{__('lang.district')}}</a></li>
-              <li><a href="{{route('village.index')}}" class="dropdown-item">{{__('lang.village')}}</a></li>
-              <li><a href="{{route('marries.index')}}" class="dropdown-item">{{__('lang.marriesstatus')}}</a></li>
-              <li><a href="{{route('position.index')}}" class="dropdown-item">{{__('lang.position')}}</a></li>
-            </ul>
-          </li>
 
           <!--Report-->
           <li class="nav-item dropdown">

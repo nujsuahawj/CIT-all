@@ -33,7 +33,7 @@
                 <!-- Shop Product Start -->
                 <div class="col-lg-12 col-md-8">
                     <div class="row">
-                        <div class="col-3 pb-2">
+                        <div class="col-md-3 pb-2">
                             <div class="form-group">
                                 <select wire:model="searchByCatalog" id="selectProduct" class="form-control">
                                     <option value="" selected>{{__('lang.select')}}</option>
@@ -43,7 +43,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-9 pb-2">
+                        <div class="col-md-9 pb-2">
                             <input type="text" wire:model="search_products" class="form-control" placeholder="{{__('blog.search_for_products')}}">
                         </div>
                     </div>

@@ -38,12 +38,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
     nav svg{
       height: 20px;
     }
+
+    @font-face{
+      font-family: Phetsarath OT;
+      src: url('{{asset('fonts/PhetsarathOT.ttf')}}');
+    }
   </style>
 
   @livewireStyles
 
 </head>
-<body class="hold-transition layout-top-nav">
+<body class="hold-transition layout-top-nav" style="font-family: 'Phetsarath OT'">
 <div class="wrapper">
 
   <!-- Navbar -->

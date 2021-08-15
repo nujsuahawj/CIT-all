@@ -15,8 +15,14 @@
   <link rel="stylesheet" href="{{asset('admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
+  <style>
+    @font-face{
+      font-family: Phetsarath OT;
+      src: url('{{asset('fonts/PhetsarathOT.ttf')}}');
+    }
+  </style>
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="font-family: 'Phetsarath OT'">
 <div class="login-box">
   <!-- /.login-logo -->
   <div class="card card-outline card-primary">
