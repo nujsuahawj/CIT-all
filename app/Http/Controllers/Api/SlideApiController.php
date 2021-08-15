@@ -15,8 +15,9 @@ class SlideApiController extends Controller
      */
     public function index()
     {
-        $slide = Slide::select('name','image')->where('del',0)->get();
-        return $slide;
+        return response([
+            'data'=> Slide::select('id','name_la','name_en','image','active')->where('del',1)->get()
+        ],200);
     }
 
     /**

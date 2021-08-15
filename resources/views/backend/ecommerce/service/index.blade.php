@@ -32,7 +32,6 @@
                       <th>{{__('lang.no')}}</th>
                       <th>{{__('lang.image')}}</th>
                       <th>{{__('lang.servicename')}}</th>
-                      <th>{{__('lang.des')}}</th>
                       <th>{{__('lang.status')}}</th>
                       <th>{{__('lang.action')}}</th>
                     </tr>
@@ -53,13 +52,7 @@
                           {{$item->name_en}}
                         @endif
                       </td>
-                      <td>
-                        @if (Config::get('app.locale') == 'lo')
-                          {{$item->des_la}}
-                        @elseif (Config::get('app.locale') == 'en')
-                          {{$item->des_en}}
-                        @endif
-                      </td>
+
                       <td style="text-align: center">
                         @if ($item->status == 1)
                           <label class="text-success">{{__('lang.active')}}</label>

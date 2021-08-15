@@ -11,11 +11,11 @@ class ShopComponent extends Component
     use WithPagination;
     protected $paginationTheme = 'bootstrap';
     
-    public $search_products, $search_by_cat;
+    public $search_products, $searchByCatalog;
 
     public function mount()
     {
-        $this->search_by_cat;
+        $this->searchByCatalog;
     }
     public function render()
     {
@@ -23,7 +23,7 @@ class ShopComponent extends Component
         $products = DB::connection('mysql2')->table('products')
                     ->select('id','name','image','price_online','catalog_id')
                     ->where('name','like', '%'. $this->search_products . '%')
-                    ->where('catalog_id','like', '%'. $this->search_by_cat . '%')
+                    ->where('catalog_id','like', '%'. $this->searchByCatalog . '%')
                     ->orderBy('price_online','desc')
                     ->where('trash',0)
                     //->where('image', '<>', '')
@@ -38,7 +38,7 @@ class ShopComponent extends Component
     {
         //dd($id);
         $singleData = DB::connection('mysql2')->table('catalogs')->select('id','name')->where('id', $id)->first();
-        $this->search_by_cat = $singleData->id;
+        $this->searchByCatalog = $singleData->id;
         //dd($this->search_by_cat);
     }
 }

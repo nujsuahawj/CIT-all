@@ -42,7 +42,7 @@
             
             @foreach ($customers as $item)
                 <div class="col-md-3">
-                    <div class="product-offer mb-30" style="height: 300px;">
+                    <div class="product-offer mb-30" style="height: 320px;">
                         <img class="img-fluid" src="{{asset($item->image)}}" alt="" style="object-fit: fill;">
                         <div class="offer-text text-center">
                             <!--<h6 class="text-white text-uppercase">Save 20%</h6>-->

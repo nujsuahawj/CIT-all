@@ -15,8 +15,9 @@ class ServiceApiController extends Controller
      */
     public function index()
     {
-        $service = Service::where('del',0)->get();
-        return $service;
+        return response([
+            'data'=> Service::select('id','image','name_la','name_en','des_la','des_en','status')->where('del',1)->get()
+        ],200);
     }
 
     /**

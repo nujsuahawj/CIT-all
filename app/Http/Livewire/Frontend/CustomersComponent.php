@@ -16,7 +16,7 @@ class CustomersComponent extends Component
     {
         $customer_type = CustomerType::all();
         $gov_customers = Customer::select('image')->orderBy('id','desc')->where('customer_type_id',1)->get();
-        $customers = Customer::select('image')->orderBy('id','desc')->paginate(32);
+        $customers = Customer::select('image')->orderBy('id','desc')->where('customer_type_id',2)->paginate(32);
         return view('livewire.frontend.customers-component', compact('customers','customer_type','gov_customers'))
         ->layout('layouts.frontend.base-frontend');
     }

@@ -20,9 +20,8 @@ class HomeComponent extends Component
         $services = Service::where('del',1)->take(4)->get();
         $products = DB::connection('mysql2')->table('products')
                     ->select('id','name','image','price_online')
-                    ->orderBy('id','desc')
                     ->where('trash',0)->where('image', '<>', '')
-                    ->paginate(12);
+                    ->inRandomOrder()->take(12)->get();
         $gov_customers = Customer::select('image')->orderBy('id','desc')->where('customer_type_id',1)->get();
         $original_customers = Customer::select('image')->orderBy('id','desc')->where('customer_type_id',2)->get();
 

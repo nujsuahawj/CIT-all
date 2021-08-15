@@ -15,13 +15,14 @@ class ProductApiController extends Controller
      */
     public function index()
     {
-        $pro = (DB::connection('mysql2')->table('products')
-                ->join('catalogs','products.catalog_id','=','catalogs.id')
-                ->select('products.id','products.name','products.price_online','products.image','products.unit_name','products.des','products.catalog_id','catalogs.name as catalogname')
-                ->orderBy('id','desc')
-                ->where('trash',0)
-                ->get());
-        return $pro;
+        return response([
+            'data'=> DB::connection('mysql2')->table('products')
+                    ->join('catalogs','products.catalog_id','=','catalogs.id')
+                    ->select('products.id','products.name','products.price_online','products.image','products.unit_name','products.des','products.catalog_id','catalogs.name as catalogname')
+                    ->orderBy('id','desc')
+                    ->where('trash',0)
+                    ->get()
+        ],200);
     }
 
     /**
