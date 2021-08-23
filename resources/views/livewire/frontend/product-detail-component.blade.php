@@ -49,16 +49,18 @@
                         </div>
                         <!--<small class="pt-1">(99 Reviews)</small>-->
                     </div>
+                    <!--
                     <h3 class="font-weight-semi-bold mb-4">
                         @if ($item->price_online == 0)
                             {{__('blog.call')}}
                         @else
                             {{number_format($item->price_online)}} {{__('lang.lak')}}
                         @endif
-                    </h3>
+                    </h3>-->
                     <p class="mb-4">
                         {!! $item->des !!}
                     </p>
+                    <!--
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <div class="input-group-btn">
@@ -74,7 +76,8 @@
                             </div>
                         </div>
                         <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> {{__('blog.add_to_cart')}}</button>
-                    </div>
+                    </div>-->
+                    <!--
                     <div class="d-flex pt-2">
                         <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
@@ -91,7 +94,7 @@
                                 <i class="fab fa-pinterest"></i>
                             </a>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>

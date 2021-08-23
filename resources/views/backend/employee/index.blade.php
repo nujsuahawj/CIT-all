@@ -28,7 +28,7 @@
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
-                    <tr>
+                    <tr style="text-align: center">
                       <th>{{__('lang.no')}}</th>
                       <th>{{__('lang.firstname')}}</th>
                       <th>{{__('lang.lastname')}}</th>
@@ -36,6 +36,7 @@
                       <th>{{__('lang.sex')}}</th>
                       <th>{{__('lang.positionname')}}</th>
                       <th>{{__('lang.departname')}}</th>
+                      <th>{{__('lang.status')}}</th>
                       <th>{{__('lang.action')}}</th>
                     </tr>
                     </thead>
@@ -46,13 +47,13 @@
 
                     @foreach ($employee as $emp)
                     <tr>
-                      <td width=5%>{{$stt++}}</td>
+                      <td width=5% style="text-align: center">{{$stt++}}</td>
                       <td>
                           <a href="{{ route('employee.show', $emp->id) }}">{{$emp->firstname}}</a>
                       </td>
                       <td>{{$emp->lastname}}</td>
                       <td>{{date('d/m/Y', strtotime($emp->bod)) }}</td>
-                      <td>
+                      <td style="text-align: center">
                         @if($emp->sex == 1)
                           <button class="btn btn-primary btn-sm">{{__('lang.man')}}</button>
                         @else
@@ -61,6 +62,13 @@
                       </td>
                       <td>{{$emp->posname->name}}</td>
                       <td>{{$emp->departname->name}}</td>
+                      <td style="text-align: center">
+                        @if($emp->status == 1)
+                          <label class="text-success">{{__('lang.active')}}</label>
+                        @else
+                          <label class="text-danger">{{__('lang.inactive')}}</label>
+                        @endif
+                      </td>
                       <td>
                         <form action=" {{ route('employee.destroy', $emp->id) }} " method="POST">
                           @csrf

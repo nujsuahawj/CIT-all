@@ -10,7 +10,7 @@ class Employee extends Model
     use HasFactory;
     protected $fillable = ['id','firstname','lastname','sex','bod','bvill_id','bdis_id','bpro_id',
         'address','vill_id','dis_id','pro_id','phone','pos_id','dpart_id','start_date','end_date',
-        'mar_id','mar_name','mar_work','mar_address','mar_phone','note','picture','file','user_id','del','created_at','updated_at'];
+        'mar_id','mar_name','mar_work','mar_address','mar_phone','note','picture','file','user_id','del','status','created_at','updated_at'];
 
     public function bvillname()
     {

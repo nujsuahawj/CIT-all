@@ -323,12 +323,21 @@
                           </div>
                         </div>
                       </div>
-
                     </div>
                     <!-- /.col -->
                   </div>
                   <!-- /.row -->
-                    
+                  <div class="row">
+                    <div class="col-md-3">
+                      <div class="form-group">
+                        <label for="file">{{__('lang.status')}}</label>
+                        <select name="status" class="form-control">
+                            <option value="1" {{$emp->status == 1 ? 'selected' : ''}}>{{ __('lang.active') }}</option>
+                            <option value="0" {{$emp->status == 0 ? 'selected' : ''}}>{{ __('lang.inactive') }}</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">{{__('lang.save')}}</button>

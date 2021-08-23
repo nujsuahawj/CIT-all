@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use App\Models\Customer;
 
-class ProductApiController extends Controller
+class CustomerApiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,14 @@ class ProductApiController extends Controller
     public function index()
     {
         return response([
-            'data'=> DB::connection('mysql2')->table('products')
-                    ->join('catalogs','products.catalog_id','=','catalogs.id')
-                    ->select('products.id','products.name','products.price_online','products.image','products.unit_name','products.des','products.catalog_id','catalogs.name as catalogname')
-                    ->orderBy('id','desc')
-                    ->where('trash',0)
-                    ->get()
+            'data'=> Customer::select('id','image','name_la','name_en','customer_type_id')->where('customer_type_id',1)->get()
+        ],200);
+    }
+
+    public function index_other()
+    {
+        return response([
+            'data'=> Customer::select('id','image','name_la','name_en','customer_type_id')->where('customer_type_id',2)->get()
         ],200);
     }
 
@@ -54,14 +56,7 @@ class ProductApiController extends Controller
      */
     public function show($id)
     {
-        return response([
-            'data'=> DB::connection('mysql2')->table('products')
-                    ->join('catalogs','products.catalog_id','=','catalogs.id')
-                    ->select('products.id','products.name','products.price_online','products.image','products.unit_name','products.des','products.catalog_id','catalogs.name as catalogname')
-                    ->orderBy('id','desc')
-                    ->where('trash',0)->where('products.id',$id)
-                    ->get()
-        ],200);
+        //
     }
 
     /**

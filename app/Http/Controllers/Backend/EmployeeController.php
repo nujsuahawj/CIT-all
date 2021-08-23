@@ -243,6 +243,7 @@ class EmployeeController extends Controller
                 'note'=>$request->note,
                 'picture'=>'pictures/emp/'.$picname,
                 'file'=>'files/emp/'.$filename,
+                'status'=>$request->status,
                 'user_id'=> 1
             ];
         } else
@@ -270,6 +271,7 @@ class EmployeeController extends Controller
                 'mar_address'=>$request->mar_address,
                 'mar_phone'=>$request->mar_phone,
                 'note'=>$request->note,
+                'status'=>$request->status,
                 'user_id'=> 1
             ];
         }
@@ -286,8 +288,7 @@ class EmployeeController extends Controller
     public function destroy($id)
     {
         $emp = Employee::find($id);
-        $emp->del = 1;
-        $emp->save();
+        $emp->delete();
         return redirect()->back()->with('success','ລຶບຂໍ້ມູນສຳເລັດ!');
     }
 }

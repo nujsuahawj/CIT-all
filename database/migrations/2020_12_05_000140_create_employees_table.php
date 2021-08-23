@@ -39,6 +39,7 @@ class CreateEmployeesTable extends Migration
             $table->text('note')->nullable()->change();
             $table->string('picture');
             $table->string('file');
+            $table->integer('status')->default('1');
             $table->integer('del')->default('0');
             $table->timestamps();
             

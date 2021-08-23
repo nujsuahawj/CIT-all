@@ -28,3 +28,5 @@ Route::resource('/catalogs', CatalogApiController::class);
 Route::resource('/slide', SlideApiController::class);
 Route::resource('/order', OrderApiController::class);
 Route::resource('/service', ServiceApiController::class);
+Route::resource('/customer', App\Http\Controllers\Api\CustomerApiController::class);
+Route::get('/other_customer', [App\Http\Controllers\Api\CustomerApiController::class,'index_other']);

@@ -49,7 +49,9 @@ class ServiceApiController extends Controller
      */
     public function show($id)
     {
-        //
+        return response([
+            'data'=> Service::select('id','image','name_la','name_en','des_la','des_en','status')->where('del',1)->where('id',$id)->get()
+        ],200);
     }
 
     /**
