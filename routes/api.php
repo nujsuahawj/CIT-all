@@ -30,3 +30,5 @@ Route::resource('/order', OrderApiController::class);
 Route::resource('/service', ServiceApiController::class);
 Route::resource('/customer', App\Http\Controllers\Api\CustomerApiController::class);
 Route::get('/other_customer', [App\Http\Controllers\Api\CustomerApiController::class,'index_other']);
+Route::resource('/about', App\Http\Controllers\Api\PageApiController::class);
+Route::get('/term', [App\Http\Controllers\Api\PageApiController::class,'term']);
