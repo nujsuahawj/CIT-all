@@ -49,7 +49,7 @@ class LoginController extends Controller
         ]))
         {
             //auth()->user()->assignRole('admin');
-            return redirect()->route('dashboard.index')->with('success','ເຂົ້າລະບົບສຳເລັດ!');;
+            return redirect()->route('module.index')->with('success','ເຂົ້າລະບົບສຳເລັດ!');;
         }
         else
         {

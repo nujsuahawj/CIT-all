@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Backend\Ecommerce;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Customer;
+use App\Models\Page;
 
-class CustomerApiController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,16 +15,8 @@ class CustomerApiController extends Controller
      */
     public function index()
     {
-        return response([
-            'data'=> Customer::select('id','image','name_la','name_en','customer_type_id')->orderBy('id','desc')->where('customer_type_id',1)->get()
-        ],200);
-    }
-
-    public function index_other()
-    {
-        return response([
-            'data'=> Customer::select('id','image','name_la','name_en','customer_type_id')->orderBy('id','desc')->where('customer_type_id',2)->get()
-        ],200);
+        $pages = Page::all();
+        return view('backend.ecommerce.pages.index', compact('pages'));
     }
 
     /**
@@ -67,7 +59,8 @@ class CustomerApiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $page = Page::find($id);
+        return view('backend.ecommerce.pages.edit', compact('page'));
     }
 
     /**
@@ -79,7 +72,22 @@ class CustomerApiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'title_la'=>'required'
+        ],[
+            'title_la.required'=>'ກະລຸນາໃສ່ຊື່ໜ້າເວັບ ພາສາສາລາວ ກ່ອນ!'
+        ]);
+
+        $page = Page::find($id);
+        $page->title_la = $request->title_la;
+        $page->title_en = $request->title_en;
+        $page->slug = $request->slug;
+        $page->des_la = $request->des_la;
+        $page->des_en = $request->des_en;
+        $page->status = $request->status;
+        $page->user_id = auth()->user()->id;
+        $page->save();
+        return redirect()->route('page.index')->with('success','ບັນທຶກຂໍ້ມູນສຳເລັດ!');
     }
 
     /**

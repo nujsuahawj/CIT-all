@@ -5,7 +5,7 @@
             <div class="col-12">
                 <nav class="breadcrumb bg-light mb-30">
                     <a class="breadcrumb-item text-dark" href="{{route('home')}}">{{__('blog.home')}}</a>
-                    <span class="breadcrumb-item active">{{__('blog.terms')}}</span>
+                    <span class="breadcrumb-item active">{{__('blog.solutions')}}</span>
                 </nav>
             </div>
         </div>
@@ -19,12 +19,7 @@
                         <div class="tab-pane fade show active" id="tab-pane-1">
                             <h4 class="mb-3 text-center">{{__('blog.sorry_a_lot_is_developing')}}</h4>
                             <p>
-                                <!--
-                                @if (Config::get('app.locale') == 'lo')
-                                    {!! $terms->des_la !!}
-                                @else
-                                    {!! $terms->des_en !!}
-                                @endif-->
+                               
                             </p>
                         </div>
                     </div>

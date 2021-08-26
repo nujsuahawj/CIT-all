@@ -88,6 +88,7 @@
         'service_detail'=>'Service description',
         'sorry_a_lot_is_developing'=>'Sorry a lot is developing',
         'gov_customers'=>'Goverment',
-        'organization_customers'=>'Organization'
+        'organization_customers'=>'Organization',
+        'solutions'=>'Solutions'
     ];
 ?>

@@ -33,6 +33,8 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{asset('frontend/css/style.css')}}" rel="stylesheet">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="{{asset('admin/plugins/toastr/toastr.min.css')}}">
 
     @livewireStyles
 
@@ -169,7 +171,7 @@
                             <a href="{{route('shop')}}" class="nav-item nav-link">{{__('blog.shop')}}</a>
                             <a href="{{route('services')}}" class="nav-item nav-link">{{__('blog.service')}}</a>
                             <a href="{{route('customers')}}" class="nav-item nav-link">{{__('blog.customers')}}</a>
-                            <a href="{{route('projects')}}" class="nav-item nav-link">{{__('blog.projects')}}</a>
+                            <a href="{{route('solutions')}}" class="nav-item nav-link">{{__('blog.solutions')}}</a>
                             <a href="{{route('success')}}" class="nav-item nav-link">{{__('blog.success_cases')}}</a>
                             <a href="{{route('about')}}" class="nav-item nav-link">{{__('blog.about')}}</a>
                             <a href="{{route('contact')}}" class="nav-item nav-link">{{__('blog.contact')}}</a>
@@ -223,7 +225,7 @@
                             <a class="text-secondary mb-2" href="{{route('shop')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.shop')}}</a>
                             <a class="text-secondary mb-2" href="{{route('services')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.service')}}</a>
                             <a class="text-secondary mb-2" href="{{route('customers')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.customers')}}</a>
-                            <a class="text-secondary mb-2" href="{{route('projects')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.projects')}}</a>
+                            <a class="text-secondary mb-2" href="{{route('solutions')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.solutions')}}</a>
                             <a class="text-secondary mb-2" href="{{route('success')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.success_cases')}}</a>
                         </div>
                     </div>
@@ -287,6 +289,8 @@
 
     <!-- Template Javascript -->
     <script src="{{asset('frontend/js/main.js')}}"></script>
+    <!-- Toastr -->
+    <script src="{{asset('admin/plugins/toastr/toastr.min.js')}}"></script>
 
     @livewireScripts
 

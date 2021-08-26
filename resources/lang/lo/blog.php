@@ -89,6 +89,7 @@
         'service_detail'=>'ລາຍລະອຽດການບໍລິການ',
         'sorry_a_lot_is_developing'=>'ຂໍໂທດຫຼາຍໆ ກຳລັງຢູ່ໃນຊ່ວງພັດທະນາ',
         'gov_customers'=>'ພາກລັດ',
-        'organization_customers'=>'ພາກເອກະຊົນ'
+        'organization_customers'=>'ພາກເອກະຊົນ',
+        'solutions'=>'ໂຊລູຊັ່ນ'
     ];
 ?>

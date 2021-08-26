@@ -414,5 +414,9 @@ return [
     'card_detail' => 'ຂໍ້ມູນບັດ',
     'employee_detail' => 'ລາຍລະອຽດພະນັກງານ',
     'salary_type' =>'ປະເພດເງິນເດືອນ',
-    'long_des'=>'ລາຍລະອຽດ'
+    'long_des'=>'ລາຍລະອຽດ',
+
+    'page'=>'ໜ້າເວັບໄຊ',
+    'send_message'=>'ສົ່ງຂໍ້ຄວາມ',
+    'subject'=>'ຫົວເລື່ອງ'
 ];

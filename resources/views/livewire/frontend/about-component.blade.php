@@ -17,9 +17,12 @@
                 <div class="bg-light p-30">
                     <div class="tab-content">
                         <div class="tab-pane fade show active" id="tab-pane-1">
-                            <h4 class="mb-3 text-center">{{__('blog.sorry_a_lot_is_developing')}}</h4>
                             <p>
-                               
+                                @if (Config::get('app.locale') == 'lo')
+                                    {!! $about->des_la !!}
+                                @else
+                                    {!! $about->des_en !!}
+                                @endif
                             </p>
                         </div>
                     </div>
