@@ -10,9 +10,9 @@
                   <div class="card card-primary card-outline">
                     <div class="card-body box-profile">
                       <div class="text-center">
-                        <img class="profile-user-img img-fluid img-circle"
-                             src="{{asset($emp->picture)}}"
-                             alt="User profile picture">
+                        @if (!empty($emp->picture))
+                          <img class="profile-user-img img-fluid img-circle"src="{{asset($emp->picture)}}"alt="User profile picture">
+                        @endif
                       </div>
       
                       <h3 class="profile-username text-center">
@@ -44,8 +44,10 @@
                           </a>
                         </li>
                       </ul>
-      
-                      <a href="{{url($emp->file)}}" target="_blank" class="btn btn-primary btn-block"><b>{{__('lang.viewfile')}}</b></a>
+                      @if (!empty($emp->file))
+                        <a href="{{url($emp->file)}}" target="_blank" class="btn btn-primary"><b>{{__('lang.viewfile')}}</b></a>
+                      @endif
+                        <a href="{{route('employee.index')}}" class="btn btn-warning"><b>{{__('lang.back')}}</b></a>
                     </div>
                     <!-- /.card-body -->
                   </div>

@@ -15,7 +15,7 @@
 
                         @foreach ($sliders as $key => $item)
                         <div class="carousel-item position-relative {{$key == 0 ? 'active' : '' }}" style="height: 430px;">
-                            <img class="position-absolute w-100 h-100" src="{{asset($item->image)}}" style="object-fit: fill;">
+                            <img class="position-absolute w-100 h-100" src="{{asset($item->image)}}" style="object-fit:cover;">
                             <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                                 <div class="p-3" style="max-width: 700px;">
                                     <h1 class="display-4 text-white mb-3 animate__animated animate__fadeInDown">{{__('blog.service')}}</h1>
@@ -66,7 +66,7 @@
                 <h5 class="font-weight-semi-bold m-0">{{__('blog.download_app')}}</h5> <br>
 
                 <a href="" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="60"></a>
-                <a href="" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="60"></a>
+                <a href="https://play.google.com/store/apps/details?id=com.citgroupapp.citgroupapp" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="60"></a>
                 <a href="" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="60"></a>
             </div>
         </div>

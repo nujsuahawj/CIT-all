@@ -245,7 +245,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <a href="" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="30" class="mb-1"></a> <br>
-                                <a href="" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="30" class="mb-1"></a> <br>
+                                <a href="https://play.google.com/store/apps/details?id=com.citgroupapp.citgroupapp" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="30" class="mb-1"></a> <br>
                                 <a href="" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="30"></a>
                             </div>
                         </div>
