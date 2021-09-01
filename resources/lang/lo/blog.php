@@ -90,6 +90,7 @@
         'sorry_a_lot_is_developing'=>'ຂໍໂທດຫຼາຍໆ ກຳລັງຢູ່ໃນຊ່ວງພັດທະນາ',
         'gov_customers'=>'ພາກລັດ',
         'organization_customers'=>'ພາກເອກະຊົນ',
-        'solutions'=>'ໂຊລູຊັ່ນ'
+        'solutions'=>'ໂຊລູຊັ່ນ',
+        'news'=>'ການເຄື່ອນໄຫວ'
     ];
 ?>

@@ -170,9 +170,9 @@
                             <a href="/" class="nav-item nav-link"><i class="fas fa-home"></i> {{__('blog.home')}}</a>
                             <a href="{{route('shop')}}" class="nav-item nav-link">{{__('blog.shop')}}</a>
                             <a href="{{route('services')}}" class="nav-item nav-link">{{__('blog.service')}}</a>
-                            <a href="{{route('customers')}}" class="nav-item nav-link">{{__('blog.customers')}}</a>
                             <a href="{{route('solutions')}}" class="nav-item nav-link">{{__('blog.solutions')}}</a>
-                            <a href="{{route('success')}}" class="nav-item nav-link">{{__('blog.success_cases')}}</a>
+                            <a href="{{route('customers')}}" class="nav-item nav-link">{{__('blog.customers')}}</a>
+                            <a href="{{route('news')}}" class="nav-item nav-link">{{__('blog.news')}}</a>
                             <a href="{{route('about')}}" class="nav-item nav-link">{{__('blog.about')}}</a>
                             <a href="{{route('contact')}}" class="nav-item nav-link">{{__('blog.contact')}}</a>
                             <!--
@@ -230,9 +230,9 @@
                             <a class="text-secondary mb-2" href="/"><i class="fa fa-angle-right mr-2"></i>{{__('blog.home')}}</a>
                             <a class="text-secondary mb-2" href="{{route('shop')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.shop')}}</a>
                             <a class="text-secondary mb-2" href="{{route('services')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.service')}}</a>
-                            <a class="text-secondary mb-2" href="{{route('customers')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.customers')}}</a>
                             <a class="text-secondary mb-2" href="{{route('solutions')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.solutions')}}</a>
-                            <a class="text-secondary mb-2" href="{{route('success')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.success_cases')}}</a>
+                            <a class="text-secondary mb-2" href="{{route('customers')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.customers')}}</a>
+                            <a class="text-secondary mb-2" href="{{route('news')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.news')}}</a>
                         </div>
                     </div>
                     <div class="col-md-4 mb-5">

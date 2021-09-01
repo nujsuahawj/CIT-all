@@ -59,6 +59,7 @@ Route::get('/cart', App\Http\Livewire\Frontend\CartComponent::class)->name('cart
 Route::get('/checkout', App\Http\Livewire\Frontend\CheckoutComponent::class)->name('checkout');
 Route::get('/wishlist', App\Http\Livewire\Frontend\WishlistComponent::class)->name('wishlist');
 Route::get('/terms', App\Http\Livewire\Frontend\TermsComponent::class)->name('terms');
+Route::get('/news', App\Http\Livewire\Frontend\NewsComponent::class)->name('news');
 
 Route::resource('/loginadmincit', LoginController::class);
 
