@@ -91,6 +91,7 @@
         'gov_customers'=>'ພາກລັດ',
         'organization_customers'=>'ພາກເອກະຊົນ',
         'solutions'=>'ໂຊລູຊັ່ນ',
-        'news'=>'ການເຄື່ອນໄຫວ'
+        'solution_detail'=>'ລາຍລະອຽດໂຊລູຊັ່ນ',
+        'news'=>'ການເຄື່ອນໄຫວ',
     ];
 ?>

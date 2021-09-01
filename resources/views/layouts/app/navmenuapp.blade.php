@@ -30,6 +30,7 @@
                   <li><a href="{{route('catalog.index')}}" class="dropdown-item">{{__('lang.catalog')}}</a></li>
                   <li><a href="{{route('slide.index')}}" class="dropdown-item">{{__('lang.slide')}}</a></li>
                   <li><a href="{{route('service.index')}}" class="dropdown-item">{{__('lang.service')}}</a></li>
+                  <li><a href="{{route('solutions.index')}}" class="dropdown-item">{{__('blog.solutions')}}</a></li>
                   <li><a href="{{route('customer.index')}}" class="dropdown-item">{{__('lang.customer')}}</a></li>
                 </ul>
               </li>

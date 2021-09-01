@@ -51,7 +51,8 @@ Route::get('/shop/product_detail/{id}', App\Http\Livewire\Frontend\ProductDetail
 Route::get('/services', App\Http\Livewire\Frontend\ServiceComponent::class)->name('services');
 Route::get('/services/service_detail/{id}', App\Http\Livewire\Frontend\ServiceDetailComponent::class)->name('service_detail');
 Route::get('/customers', App\Http\Livewire\Frontend\CustomersComponent::class)->name('customers');
-Route::get('/solutions', App\Http\Livewire\Frontend\SolutionsComponent::class)->name('solutions');
+Route::get('/frontend/solutions', App\Http\Livewire\Frontend\SolutionsComponent::class)->name('solutions');
+Route::get('/frontend/solutions/solution_detail/{id}', App\Http\Livewire\Frontend\SolutionsDetailComponent::class)->name('solution_detail');
 Route::get('/success', App\Http\Livewire\Frontend\SuccesCasesComponent::class)->name('success');
 Route::get('/about', App\Http\Livewire\Frontend\AboutComponent::class)->name('about');
 Route::get('/contact', App\Http\Livewire\Frontend\ContactComponent::class)->name('contact');
@@ -110,6 +111,7 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::resource('/slide',SlideController::class);
     Route::resource('/service',ServiceController::class);
     Route::resource('/customer', App\Http\Controllers\Backend\Ecommerce\CustomerController::class);
+    Route::resource('/solutions', App\Http\Controllers\Backend\Ecommerce\SolutionController::class);
     
 
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');

@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Ecommerce;
+namespace App\Http\Controllers\backend\ecommerce;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Service;
+use App\Models\Solution;
 
-class ServiceController extends Controller
+class SolutionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $service = Service::orderBy('id','desc')->get();
-        return view('backend.ecommerce.service.index', compact('service'));
+        $solutions = Solution::orderBy('id','desc')->get();
+        return view('backend.ecommerce.solutions.index', compact('solutions'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('backend.ecommerce.service.create');
+        return view('backend.ecommerce.solutions.create');
     }
 
     /**
@@ -38,25 +38,29 @@ class ServiceController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'image'=>'required',
-            'name_la'=>'required',
+            'image'=>'required|image|max:1024',
+            'name_la'=>'required'
         ],[
-            'image.required' => 'ໃສ່ຮູບແບບໄອຄ່ອນກ່ອນ!',
-            'name_la.required' => 'ກະລຸນາໃສ່ຊື່ບໍລິການກ່ອນ!',
+            'name_la.required'=>'ກະລຸນາໃສ່ຊື່ ໂຊລູຊັ່ນ ພາສາລາວກ່ອນ!',
+            'image.image'=>'ກະລຸນາເລືອກຮູບ',
+            'image.max'=>'ຮູບໃຫຍ່ກວ່າ 1024 px ກະລຸນາເລືອກໃໝ່!'
         ]);
+
         $image = $request->image;
         $filename = time().$image->getClientOriginalName();
 
-        Service::create([
+        Solution::create([
             'name_la'=>$request->name_la,
             'name_en'=>$request->name_en,
+            'short_des_la'=>$request->short_des_la,
+            'short_des_en'=>$request->short_des_en,
             'des_la'=>$request->des_la,
             'des_en'=>$request->des_en,
-            'image'=>'upload/service/'.$filename,
+            'image'=>'upload/solutions/'.$filename,
             'status'=>$request->status
         ]);
-        $image->move('upload/service/',$filename);
-        return redirect()->route('service.index')->with('success','ເພີ່ມຂໍ້ມູນສຳເລັດ!');
+        $image->move('upload/solutions/',$filename);
+        return redirect()->route('solutions.index')->with('success','ເພີ່ມຂໍ້ມູນສຳເລັດ!');
     }
 
     /**
@@ -78,8 +82,8 @@ class ServiceController extends Controller
      */
     public function edit($id)
     {
-        $service = Service::find($id);
-        return view('backend.ecommerce.service.edit', compact('service'));
+        $solutions = Solution::find($id);
+        return view('backend.ecommerce.solutions.edit', compact('solutions'));
     }
 
     /**
@@ -102,28 +106,32 @@ class ServiceController extends Controller
         {
             $image = $request->image;
             $filename = time().$image->getClientOriginalName();
-            $image->move('upload/service/',$filename);
+            $image->move('upload/solutions/',$filename);
 
-            $service_data = [
+            $solution_data = [
                 'name_la'=>$request->name_la,
                 'name_en'=>$request->name_en,
+                'short_des_la'=>$request->short_des_la,
+                'short_des_en'=>$request->short_des_en,
                 'des_la'=>$request->des_la,
                 'des_en'=>$request->des_en,
-                'image'=>'upload/service/'.$filename,
+                'image'=>'upload/solutions/'.$filename,
                 'status'=>$request->status
             ];
         } else
         {
-            $service_data = [
+            $solution_data = [
                 'name_la'=>$request->name_la,
                 'name_en'=>$request->name_en,
+                'short_des_la'=>$request->short_des_la,
+                'short_des_en'=>$request->short_des_en,
                 'des_la'=>$request->des_la,
                 'des_en'=>$request->des_en,
                 'status'=>$request->status
             ];
         }
 
-        $service->update($service_data);
+        $service->update($solution_data);
         return redirect()->route('service.index')->with('success','ແກ້ໄຂຂໍ້ມູນສຳເລັດ!');
     }
 
@@ -135,8 +143,15 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        $service = Service::find($id);
-        $service->delete();
-        return redirect()->route('service.index')->with('success','ລຶບຂໍ້ມູນສຳເລັດ!');
+        $solutions = Solution::find($id);
+        if(file_exists($solutions->image)) {
+            unlink($solutions->image);
+            $solutions->delete();
+        }
+        else
+        {
+            $solutions->delete();
+        }
+        return redirect()->back()->with('success','ລຶບຂໍ້ມູນສຳເລັດ!'); 
     }
 }
