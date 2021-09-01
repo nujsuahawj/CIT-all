@@ -14,7 +14,7 @@ use App\Http\Controllers\Backend\UserController;
 use App\Http\Controllers\Backend\RoleController;
 use App\Http\Controllers\Backend\LoginController;
 use App\Http\Controllers\Backend\Account\SettingAccController;
-use App\Http\Controllers\Backend\Account\BranchController;
+//use App\Http\Controllers\Backend\Account\BranchController;
 use App\Http\Controllers\Backend\Account\StatusAccController;
 use App\Http\Controllers\Backend\Account\CurrencyController;
 use App\Http\Controllers\Backend\Account\TransectionController;
@@ -77,11 +77,12 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::resource('/position', PositionController::class);
     Route::resource('/user', UserController::class);
     Route::resource('/role', RoleController::class);
+    Route::resource('/branch', App\Http\Controllers\Backend\BranchController::class);
 
     Route::resource('/transection',TransectionController::class);
     Route::PATCH('/approved/{id}',[TransectionController::class,'approved'])->name('transection.approved');
     Route::PATCH('/rejected/{id}',[TransectionController::class,'rejected'])->name('transection.rejected');
-    Route::resource('/branch',BranchController::class);
+    //Route::resource('/branch',BranchController::class);
     Route::resource('/statusacc',StatusAccController::class);
     Route::resource('/currency',CurrencyController::class);
     Route::resource('/settingacc',SettingAccController::class);

@@ -15,11 +15,30 @@ class CreateBranchesTable extends Migration
     {
         Schema::create('branches', function (Blueprint $table) {
             $table->id();
-            $table->integer('code');
-            $table->string('name');
-            $table->string('address');
-            $table->string('phone');
-            $table->integer('del')->default('0');
+            $table->string('code');
+            $table->string('logo')->nullable();
+            $table->string('company_photo')->nullable();
+            $table->string('structure_photo')->nullable();
+            $table->string('name_la')->nullable();
+            $table->string('name_en')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('email')->nullable();
+            $table->string('address_la')->nullable();
+            $table->string('address_en')->nullable();
+            $table->string('whatapps')->nullable();
+            $table->string('fanpage')->nullable();
+            $table->string('youtube')->nullable();
+            $table->text('google_map')->nullable();
+            $table->string('play_store')->nullable();
+            $table->string('app_store')->nullable();
+            $table->string('app_gallery')->nullable();
+            $table->string('director_sign')->nullable();
+            $table->string('chechker_sign')->nullable();
+            $table->string('customer_sign')->nullable();
+            $table->string('staff_sign')->nullable();
+            $table->longtext('bill_header')->nullable();
+            $table->longtext('bill_footer')->nullable();
+            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }

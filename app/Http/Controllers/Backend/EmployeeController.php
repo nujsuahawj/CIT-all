@@ -110,7 +110,7 @@ class EmployeeController extends Controller
                 'mar_phone'=>$request->mar_phone,
                 'note'=>$request->note,
                 'picture'=>'pictures/emp/'.$picname,
-                'file'=>'files/emp/'.$filename,
+                //'file'=>'files/emp/'.$filename,
                 'user_id'=> Auth()->user()->id
             ]);
 

@@ -180,11 +180,12 @@
                         <a class="h6 text-decoration-none" href="{{route('product_detail', $item->id)}}">{{$item->name}}</a>
                         <div class="d-flex align-items-center justify-content-center mt-2">
                             <h5>
+                                <!--
                                 @if ($item->price_online == 0)
                                     {{__('blog.call')}}
                                 @else
                                     {{number_format($item->price_online)}} {{__('lang.lak')}}
-                                @endif
+                                @endif-->
                             </h5>
                             <!--<h5>$123.00</h5><h6 class="text-muted ml-2"><del>$123.00</del></h6>-->
                         </div>

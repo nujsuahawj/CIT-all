@@ -23,6 +23,7 @@ class CreatePayrollsTable extends Migration
             $table->decimal('overtime');
             $table->string('note');
             $table->integer('status')->default('1');
+            $table->integer('accept_id')->nullable();
             $table->integer('del')->default('1');
             $table->timestamps();
         });

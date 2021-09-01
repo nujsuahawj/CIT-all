@@ -31,7 +31,7 @@ class UserController extends Controller
     {
         $emp = Employee::where('del',0)->get();
         $role = Role::where('del',0)->get();
-        $branch = Branch::where('del',0)->get();
+        $branch = Branch::all();
         return view('backend.settings.user.create', compact('emp','role','branch'));
     }
 
@@ -50,7 +50,6 @@ class UserController extends Controller
             'password'=>'required|min:6',
             'confirmpassword'=>'required|same:password',
             'emp_id'=>'required',
-            'branch_id'=>'required',
             'role_id'=>'required'
         ],[
             'name.required'=>'ກະລຸນາໃສ່ຊື່ຜູ້ໃຊ່ກ່ອນ!',
@@ -64,7 +63,6 @@ class UserController extends Controller
             'confirmpassword.required'=>'ກະລຸນາຢືນຢັນລະຫັດຜ່ານຄືນກ່ອນ!',
             'confirmpassword.same'=>'ຢືນຢືນລະຫັດຜ່ານ ບໍ່ຄືກັນກັບ ຫ້ອງລະຫັດຜ່ານຂ້າງເທິງ',
             'emp_id.required'=>'ກະລຸນາເລືອກພະນັກງານກ່ອນ!',
-            'branch_id.required'=>'ກະລຸນາເລືອກສາຂາກ່ອນ!',
             'role_id.required'=>'ກະລຸນາເລືອກສິດນຳໃຊ້ກ່ອນ!'
         ]);
         User::create([
@@ -101,7 +99,7 @@ class UserController extends Controller
         $user = User::find($id);
         $emp = Employee::where('del',0)->get();
         $role = Role::where('del',0)->get();
-        $branch = Branch::where('del',0)->get();
+        $branch = Branch::all();
         return view('backend.settings.user.edit', compact('emp','role','user','branch'));
     }
 
@@ -120,7 +118,6 @@ class UserController extends Controller
             'phone'=>'required|min:8',
             'email'=>'required|email',
             'emp_id'=>'required',
-            //'branh_id'=>'required',
             'role_id'=>'required'
         ],[
             'name.required'=>'ກະລຸນາໃສ່ຊື່ຜູ້ໃຊ່ກ່ອນ!',
@@ -131,7 +128,6 @@ class UserController extends Controller
             'confirmpassword.required'=>'ກະລຸນາຢືນຢັນລະຫັດຜ່ານຄືນກ່ອນ!',
             'confirmpassword.same'=>'ຢືນຢືນລະຫັດຜ່ານ ບໍ່ຄືກັນກັບ ຫ້ອງລະຫັດຜ່ານຂ້າງເທິງ',
             'emp_id.required'=>'ກະລຸນາເລືອກພະນັກງານກ່ອນ!',
-            //'branch_id.required'=>'ກະລຸນາເລືອກສາຂາກ່ອນ!',
             'role_id.required'=>'ກະລຸນາເລືອກສິດນຳໃຊ້ກ່ອນ!'
         ]);
         if($request->input('password'))
@@ -170,8 +166,7 @@ class UserController extends Controller
     public function destroy($id)
     {
         $user = User::find($id);
-        $user->del = 1;
-        $user->save();
+        $user->delete();
         return redirect()->back()->with('success','ລຶບຂໍ້ມູນສຳເລັດ!');
     }
 }

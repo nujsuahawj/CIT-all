@@ -89,6 +89,7 @@
               <li class="dropdown-submenu dropdown-hover">
                 <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">{{__('lang.module_system')}}</a>
                 <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                  <li><a href="{{route('branch.index')}}" class="dropdown-item">{{__('lang.branch')}}</a></li>
                   <li><a href="{{route('role.index')}}" class="dropdown-item">{{__('lang.role')}}</a></li>
                   <li><a href="{{route('user.index')}}" class="dropdown-item">{{__('lang.user')}}</a></li>
                   <li class="dropdown-divider"></li>

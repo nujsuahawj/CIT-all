@@ -233,10 +233,10 @@ return [
     'bill_title'=>'ຫົວຂໍ້ບິນ',
     'qrcode'=>'QR Code',
     'qrcode_text'=>'ຂໍ້ຄວາມໃຕ້ QR Code',
-    'signal_staff'=>'ພະນັກງານ',
-    'signal_customer'=>'ລູກຄ້າ',
-    'signal_checker'=>'ຜູ້ກວດກາ',
-    'signal_director'=>'ຫົວໜ້າບໍລິສັດ',
+    'staff_sign'=>'ພະນັກງານ',
+    'customer_sign'=>'ລູກຄ້າ',
+    'chechker_sign'=>'ຜູ້ກວດກາ',
+    'director_sign'=>'ອຳນວຍການບໍລິສັດ',
     
     //Report
     'allreport'=>'ລາຍງານລວມ',
@@ -418,5 +418,7 @@ return [
 
     'page'=>'ໜ້າເວັບໄຊ',
     'send_message'=>'ສົ່ງຂໍ້ຄວາມ',
-    'subject'=>'ຫົວເລື່ອງ'
+    'subject'=>'ຫົວເລື່ອງ',
+    'whatapps'=>'Whatapps Link',
+    'fanpage'=>'Facebook Fanpage'
 ];

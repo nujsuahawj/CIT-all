@@ -118,7 +118,7 @@
             </div>-->
             <div class="col-lg-4 col-6 text-right">
                 <p class="m-0">{{__('blog.hotline')}}</p>
-                <h4 class="m-0">02058189995-02058189996</h4>
+                <h4 class="m-0">{{$branchs->phone}}</h4>
             </div>
         </div>
     </div>
@@ -210,11 +210,17 @@
     <div class="container-fluid bg-dark text-secondary mt-5 pt-5">
         <div class="row px-xl-5 pt-5">
             <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <h5 class="text-secondary text-uppercase mb-4">{{__('blog.about')}}</h5>
-                <p class="mb-4">ບໍລິສັດ ຊີໄອທີ ຈຳກັດຜູ້ດຽວ ດຳເນີນທຸລະກິດ ກ່ຽວກັບ ວຽກງານເຕັກໂນໂລຊີ ຂໍ້ມູນຂ່າວສານ (All IT Solutions)</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>ບ້ານຫ້ວຍຫົງ, ເມືອງຈັນທະບູລີ, ນະຄອນຫຼວງວຽງຈັນ</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>info@citgroup.la</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>(+856) 2058189996 - 2058189995</p>
+                <h5 class="text-secondary text-uppercase mb-4">{{__('blog.contact')}}</h5>
+                <p class="mb-4"></p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>
+                    @if (Config::get('app.locale') == 'lo')
+                        {{$branchs->address_la}}
+                    @elseif(Config::get('app.locale') == 'en')
+                        {{$branchs->address_en}}
+                    @endif
+                </p>
+                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>{{$branchs->email}}</p>
+                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>{{$branchs->phone}}</p>
             </div>
             <div class="col-lg-8 col-md-12">
                 <div class="row">
@@ -244,16 +250,16 @@
                         <h5 class="text-secondary text-uppercase mb-4">{{__('blog.download_app')}}</h5>
                         <div class="row">
                             <div class="col-lg-12">
-                                <a href="" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="30" class="mb-1"></a> <br>
-                                <a href="https://play.google.com/store/apps/details?id=com.citgroupapp.citgroupapp" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="30" class="mb-1"></a> <br>
-                                <a href="" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="30"></a>
+                                <a href="{{$branchs->app_store}}" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="30" class="mb-1"></a> <br>
+                                <a href="{{$branchs->play_store}}" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="30" class="mb-1"></a> <br>
+                                <a href="{{$branchs->app_gallery}}" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="30"></a>
                             </div>
                         </div>
                         <h6 class="text-secondary text-uppercase mt-4 mb-3">{{__('blog.follow_us')}}</h6>
                         <div class="d-flex">
-                            <a class="btn btn-primary btn-square mr-2" href="https://wa.me/8562058189995" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="https://www.facebook.com/citdev.la" target="_blank"><i class="fab fa-facebook-f" target="_blank"></i></a>
-                            <a class="btn btn-primary btn-square mr-2" href="https://www.youtube.com/citsole" target="_blank"><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="{{$branchs->whatapps}}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="{{$branchs->fanpage}}" target="_blank"><i class="fab fa-facebook-f" target="_blank"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="{{$branchs->youtube}}" target="_blank"><i class="fab fa-youtube"></i></a>
                         </div>
                     </div>
                 </div>
