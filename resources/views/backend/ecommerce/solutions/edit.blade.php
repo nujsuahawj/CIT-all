@@ -24,7 +24,7 @@
               <h4 class="card-title">{{__('lang.edit')}}</h4>
             </div>
 
-            <form method="POST" action="{{route('solutions.store', $solutions->id)}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('solutions.update', $solutions->id)}}" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
 

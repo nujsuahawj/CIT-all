@@ -95,7 +95,7 @@ class SolutionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $service = Service::find($id);
+        $solution = Solution::find($id);
         $request->validate([
             'name_la'=>'required',
         ],[
@@ -131,8 +131,8 @@ class SolutionController extends Controller
             ];
         }
 
-        $service->update($solution_data);
-        return redirect()->route('service.index')->with('success','ແກ້ໄຂຂໍ້ມູນສຳເລັດ!');
+        $solution->update($solution_data);
+        return redirect()->route('solutions.index')->with('success','ແກ້ໄຂຂໍ້ມູນສຳເລັດ!');
     }
 
     /**

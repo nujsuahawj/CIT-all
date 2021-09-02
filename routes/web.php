@@ -64,6 +64,10 @@ Route::get('/news', App\Http\Livewire\Frontend\NewsComponent::class)->name('news
 
 Route::resource('/loginadmincit', LoginController::class);
 
+Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
+    \UniSharp\LaravelFilemanager\Lfm::routes();
+});
+
 Route::group(['middleware'=>'adminLogin'],function()
 {
 

@@ -18,7 +18,7 @@ class SolutionsComponent extends Component
     {
         $solutions = Solution::orderBy('id','desc')
             ->where('name_la','like', '%'. $this->search . '%')
-            ->where('name_en','like', '%'. $this->search . '%')
+            ->Orwhere('name_en','like', '%'. $this->search . '%')
             ->where('status',1)->paginate(20);
 
         return view('livewire.frontend.solutions-component', compact('solutions'))
