@@ -65,9 +65,9 @@
             <div class="col-lg-12 text-center">
                 <h5 class="font-weight-semi-bold m-0">{{__('blog.download_app')}}</h5> <br>
 
-                <a href="" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="60"></a>
-                <a href="https://play.google.com/store/apps/details?id=com.citgroupapp.citgroupapp" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="60"></a>
-                <a href="" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="60"></a>
+                <a href="{{$branchs->app_store}}" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="60"></a>
+                <a href="{{$branchs->play_store}}" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="60"></a>
+                <a href="{{$branchs->app_gallery}}" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="60"></a>
             </div>
         </div>
     </div>

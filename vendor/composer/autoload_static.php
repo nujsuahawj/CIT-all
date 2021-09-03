@@ -23,9 +23,9 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         'a1105708a18b76903365ca1c4aa61b02' => __DIR__ . '/..' . '/symfony/translation/Resources/functions.php',
+        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
-        '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
@@ -182,6 +182,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         array (
             'Asm89\\Stack\\' => 12,
             'App\\' => 4,
+            'Alexusmai\\LaravelFileManager\\' => 29,
         ),
     );
 
@@ -407,6 +408,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'Intervention\\Image\\' => 
         array (
             0 => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image',
+            1 => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image',
         ),
         'Illuminate\\Support\\' => 
         array (
@@ -509,6 +511,10 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+        'Alexusmai\\LaravelFileManager\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -522,6 +528,46 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
     );
 
     public static $classMap = array (
+        'Alexusmai\\LaravelFileManager\\Controllers\\FileManagerController' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Controllers/FileManagerController.php',
+        'Alexusmai\\LaravelFileManager\\Events\\BeforeInitialization' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/BeforeInitialization.php',
+        'Alexusmai\\LaravelFileManager\\Events\\Deleted' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/Deleted.php',
+        'Alexusmai\\LaravelFileManager\\Events\\Deleting' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/Deleting.php',
+        'Alexusmai\\LaravelFileManager\\Events\\DirectoryCreated' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/DirectoryCreated.php',
+        'Alexusmai\\LaravelFileManager\\Events\\DirectoryCreating' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/DirectoryCreating.php',
+        'Alexusmai\\LaravelFileManager\\Events\\DiskSelected' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/DiskSelected.php',
+        'Alexusmai\\LaravelFileManager\\Events\\Download' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/Download.php',
+        'Alexusmai\\LaravelFileManager\\Events\\FileCreated' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/FileCreated.php',
+        'Alexusmai\\LaravelFileManager\\Events\\FileCreating' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/FileCreating.php',
+        'Alexusmai\\LaravelFileManager\\Events\\FileUpdate' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/FileUpdate.php',
+        'Alexusmai\\LaravelFileManager\\Events\\FilesUploaded' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/FilesUploaded.php',
+        'Alexusmai\\LaravelFileManager\\Events\\FilesUploading' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/FilesUploading.php',
+        'Alexusmai\\LaravelFileManager\\Events\\Paste' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/Paste.php',
+        'Alexusmai\\LaravelFileManager\\Events\\Rename' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/Rename.php',
+        'Alexusmai\\LaravelFileManager\\Events\\Unzip' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/Unzip.php',
+        'Alexusmai\\LaravelFileManager\\Events\\UnzipCreated' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/UnzipCreated.php',
+        'Alexusmai\\LaravelFileManager\\Events\\UnzipFailed' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/UnzipFailed.php',
+        'Alexusmai\\LaravelFileManager\\Events\\Zip' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/Zip.php',
+        'Alexusmai\\LaravelFileManager\\Events\\ZipCreated' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/ZipCreated.php',
+        'Alexusmai\\LaravelFileManager\\Events\\ZipFailed' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Events/ZipFailed.php',
+        'Alexusmai\\LaravelFileManager\\FileManager' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/FileManager.php',
+        'Alexusmai\\LaravelFileManager\\FileManagerServiceProvider' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/FileManagerServiceProvider.php',
+        'Alexusmai\\LaravelFileManager\\Middleware\\FileManagerACL' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Middleware/FileManagerACL.php',
+        'Alexusmai\\LaravelFileManager\\Requests\\CustomErrorMessage' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Requests/CustomErrorMessage.php',
+        'Alexusmai\\LaravelFileManager\\Requests\\RequestValidator' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Requests/RequestValidator.php',
+        'Alexusmai\\LaravelFileManager\\Services\\ACLService\\ACL' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/ACLService/ACL.php',
+        'Alexusmai\\LaravelFileManager\\Services\\ACLService\\ACLRepository' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/ACLService/ACLRepository.php',
+        'Alexusmai\\LaravelFileManager\\Services\\ACLService\\ConfigACLRepository' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/ACLService/ConfigACLRepository.php',
+        'Alexusmai\\LaravelFileManager\\Services\\ACLService\\DBACLRepository' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/ACLService/DBACLRepository.php',
+        'Alexusmai\\LaravelFileManager\\Services\\ConfigService\\ConfigRepository' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/ConfigService/ConfigRepository.php',
+        'Alexusmai\\LaravelFileManager\\Services\\ConfigService\\DefaultConfigRepository' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/ConfigService/DefaultConfigRepository.php',
+        'Alexusmai\\LaravelFileManager\\Services\\TransferService\\ExternalTransfer' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/TransferService/ExternalTransfer.php',
+        'Alexusmai\\LaravelFileManager\\Services\\TransferService\\LocalTransfer' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/TransferService/LocalTransfer.php',
+        'Alexusmai\\LaravelFileManager\\Services\\TransferService\\Transfer' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/TransferService/Transfer.php',
+        'Alexusmai\\LaravelFileManager\\Services\\TransferService\\TransferFactory' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/TransferService/TransferFactory.php',
+        'Alexusmai\\LaravelFileManager\\Services\\Zip' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Services/Zip.php',
+        'Alexusmai\\LaravelFileManager\\Traits\\CheckTrait' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Traits/CheckTrait.php',
+        'Alexusmai\\LaravelFileManager\\Traits\\ContentTrait' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Traits/ContentTrait.php',
+        'Alexusmai\\LaravelFileManager\\Traits\\PathTrait' => __DIR__ . '/..' . '/alexusmai/laravel-file-manager/src/Traits/PathTrait.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Api\\CatalogApiController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/CatalogApiController.php',
@@ -2606,6 +2652,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'Intervention\\Image\\AbstractEncoder' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractEncoder.php',
         'Intervention\\Image\\AbstractFont' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractFont.php',
         'Intervention\\Image\\AbstractShape' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/AbstractShape.php',
+        'Intervention\\Image\\CachedImage' => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image/CachedImage.php',
         'Intervention\\Image\\Commands\\AbstractCommand' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Commands/AbstractCommand.php',
         'Intervention\\Image\\Commands\\Argument' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Commands/Argument.php',
         'Intervention\\Image\\Commands\\ChecksumCommand' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Commands/ChecksumCommand.php',
@@ -2674,7 +2721,10 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'Intervention\\Image\\Gd\\Shapes\\LineShape' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Gd/Shapes/LineShape.php',
         'Intervention\\Image\\Gd\\Shapes\\PolygonShape' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Gd/Shapes/PolygonShape.php',
         'Intervention\\Image\\Gd\\Shapes\\RectangleShape' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Gd/Shapes/RectangleShape.php',
+        'Intervention\\Image\\HashableClosure' => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image/HashableClosure.php',
         'Intervention\\Image\\Image' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Image.php',
+        'Intervention\\Image\\ImageCache' => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image/ImageCache.php',
+        'Intervention\\Image\\ImageCacheController' => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image/ImageCacheController.php',
         'Intervention\\Image\\ImageManager' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/ImageManager.php',
         'Intervention\\Image\\ImageManagerStatic' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/ImageManagerStatic.php',
         'Intervention\\Image\\ImageServiceProvider' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/ImageServiceProvider.php',
@@ -2726,6 +2776,9 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'Intervention\\Image\\Point' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Point.php',
         'Intervention\\Image\\Response' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Response.php',
         'Intervention\\Image\\Size' => __DIR__ . '/..' . '/intervention/image/src/Intervention/Image/Size.php',
+        'Intervention\\Image\\Templates\\Large' => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image/Templates/Large.php',
+        'Intervention\\Image\\Templates\\Medium' => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image/Templates/Medium.php',
+        'Intervention\\Image\\Templates\\Small' => __DIR__ . '/..' . '/intervention/imagecache/src/Intervention/Image/Templates/Small.php',
         'JsonException' => __DIR__ . '/..' . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
         'Laravel\\Tinker\\ClassAliasAutoloader' => __DIR__ . '/..' . '/laravel/tinker/src/ClassAliasAutoloader.php',
         'Laravel\\Tinker\\Console\\TinkerCommand' => __DIR__ . '/..' . '/laravel/tinker/src/Console/TinkerCommand.php',

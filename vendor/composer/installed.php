@@ -5,11 +5,20 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '732b1f91fc9feb89ed37c461b0ee7fd80709d348',
+        'reference' => '3b084fd031f6adc099884d0e88e125cab97b7c91',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'alexusmai/laravel-file-manager' => array(
+            'pretty_version' => 'v2.5.4',
+            'version' => '2.5.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../alexusmai/laravel-file-manager',
+            'aliases' => array(),
+            'reference' => '1ad25434eb321cc208dbd3cecca504bd4f774b57',
+            'dev_requirement' => false,
+        ),
         'asm89/stack-cors' => array(
             'pretty_version' => 'v2.0.2',
             'version' => '2.0.2.0',
@@ -397,6 +406,15 @@
             'reference' => '0925f10b259679b5d8ca58f3a2add9255ffcda45',
             'dev_requirement' => false,
         ),
+        'intervention/imagecache' => array(
+            'pretty_version' => '2.5.1',
+            'version' => '2.5.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../intervention/imagecache',
+            'aliases' => array(),
+            'reference' => 'e714f13298ecaf9b2d11cb7106a0415d5615cbe5',
+            'dev_requirement' => false,
+        ),
         'kodova/hamcrest-php' => array(
             'dev_requirement' => true,
             'replaced' => array(
@@ -418,7 +436,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '732b1f91fc9feb89ed37c461b0ee7fd80709d348',
+            'reference' => '3b084fd031f6adc099884d0e88e125cab97b7c91',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(

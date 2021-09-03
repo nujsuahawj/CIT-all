@@ -420,5 +420,8 @@ return [
     'send_message'=>'ສົ່ງຂໍ້ຄວາມ',
     'subject'=>'ຫົວເລື່ອງ',
     'whatapps'=>'Whatapps Link',
-    'fanpage'=>'Facebook Fanpage'
+    'fanpage'=>'Facebook Fanpage',
+    'app_store'=>'App Store',
+    'play_store'=>'Play Store',
+    'app_gallery'=>'App Gallery'
 ];

@@ -7,6 +7,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
   <title>{{__('lang.title')}} | {{__('lang.dashboard')}}</title>
   <link rel="icon" type="image/png" href="{{asset('images/logo.png')}}"/>
 
@@ -20,9 +22,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+  
+  <!--File Manager-->
+  <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
 
-  <!-- summernote -->
+  <!-- summernote
   <link rel="stylesheet" href="{{asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
+  -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+  <!-- Bootstrap CSS 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
 
   <!-- Toastr -->
   <link rel="stylesheet" href="{{asset('admin/plugins/toastr/toastr.min.css')}}">
@@ -111,8 +120,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('admin/plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('admin/plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
 <script src="{{asset('admin/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
+
+<!--File manager
+<script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 <!-- Summernote -->
 <script src="{{asset('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+
 <!-- Select2 -->
 <script src="{{asset('admin/plugins/select2/js/select2.full.min.js')}}"></script>
 
@@ -124,8 +144,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- AdminLTE App -->
 <script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
 <script src="{{asset('js/money.format.js')}}"></script>
-<!--<script src="{{asset("ckeditor/ckeditor.js")}}"></script>-->
-<script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 
 
 <script>
@@ -179,51 +197,38 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <script>
   $(document).ready(function(){
-
-    // Define function to open filemanager window
-    var lfm = function(options, cb) {
-      var route_prefix = (options && options.prefix) ? options.prefix : '/laravel-filemanager';
-      window.open(route_prefix + '?type=' + options.type || 'file', 'FileManager', 'width=900,height=600');
-      window.SetUrl = cb;
-    };
-
-    // Define LFM summernote button
-    var LFMButton = function(context) {
-      var ui = $.summernote.ui;
-      var button = ui.button({
+    // File manager button (image icon)
+    const FMButton = function(context) {
+      const ui = $.summernote.ui;
+      const button = ui.button({
         contents: '<i class="note-icon-picture"></i> ',
-        tooltip: 'Insert image with filemanager',
+        tooltip: 'File Manager',
         click: function() {
-
-          lfm({type: 'image', prefix: '/laravel-filemanager'}, function(lfmItems, path) {
-            lfmItems.forEach(function (lfmItem) {
-              context.invoke('insertImage', lfmItem.url);
-            });
-          });
-
+          window.open('/file-manager/summernote', 'fm', 'width=1400,height=800');
         }
       });
       return button.render();
     };
-
-    // Initialize summernote with LFM button in the popover button group
-    // Please note that you can add this button to any other button group you'd like
     $('.summernote').summernote({
       toolbar: [
-        ['style', ['style']],
-        ['font', ['bold', 'underline', 'clear']],
+        // [groupName, [list of button]]
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
         ['color', ['color']],
         ['para', ['ul', 'ol', 'paragraph']],
-        ['table', ['table']],
-        //['insert', ['link', 'picture', 'video']],
-        ['view', ['fullscreen', 'codeview', 'help']],
-        ['popovers', ['lfm']],
+        ['height', ['height']],
+        ['fm-button', ['fm']],
       ],
       buttons: {
-        lfm: LFMButton
+        fm: FMButton
       }
-    })
+    });
   });
+  // set file link
+  function fmSetLink(url) {
+    $('#summernote').summernote('insertImage', url);
+  }
 </script>
 
 @yield('scripts')

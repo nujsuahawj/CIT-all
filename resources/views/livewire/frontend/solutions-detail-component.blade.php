@@ -35,7 +35,7 @@
                                 @endif
                             </h4>
                             <div class="text-center">
-                                <img src="{{asset($solutions->image)}}" alt="" width="50%">
+                                <img src="{{asset($solutions->image)}}" alt="" width="100%">
                             </div>
                             <p>
                                 @if (Config::get('app.locale') == 'lo')

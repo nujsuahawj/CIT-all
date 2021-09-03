@@ -222,6 +222,42 @@
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label for="app_store">{{__('lang.app_store')}}</label>
+                                <input type="text" name="app_store" value="{{$branch->app_store}}" class="form-control {{ $errors->has('app_store') ? ' is-invalid' : '' }}" placeholder="{{__('lang.app_store')}}" >
+                                @if ($errors->has('app_store'))
+                                  <span class="invalid-feedback"> <strong>{{ $errors->first('app_store') }}</strong></span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="play_store">{{__('lang.play_store')}}</label>
+                                <input type="text" name="play_store" value="{{$branch->play_store}}" class="form-control {{ $errors->has('play_store') ? ' is-invalid' : '' }}" placeholder="{{__('lang.play_store')}}" >
+                                @if ($errors->has('play_store'))
+                                  <span class="invalid-feedback"> <strong>{{ $errors->first('play_store') }}</strong></span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="app_gallery">{{__('lang.app_gallery')}}</label>
+                                <input type="text" name="app_gallery" value="{{$branch->app_gallery}}" class="form-control {{ $errors->has('app_gallery') ? ' is-invalid' : '' }}" placeholder="{{__('lang.app_gallery')}}" >
+                                @if ($errors->has('app_gallery'))
+                                  <span class="invalid-feedback"> <strong>{{ $errors->first('app_gallery') }}</strong></span>
+                                @endif
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <label for="bill_header">{{__('lang.des')}} ({{__('lang.bill_header')}})</label>
                                 <textarea name="bill_header" class="form-group summernote"> {{$branch->bill_header}} </textarea>
                             </div>

@@ -90,9 +90,10 @@ return [
     |--------------------------------------------------------------------------
      */
 
-    'disk'                     => 'public',
+    //'disk'                     => 'public',
+    'disk'                     => 'local',
 
-    'rename_file'              => false,
+    'rename_file'              => true,
 
     'rename_duplicates'        => false,
 
