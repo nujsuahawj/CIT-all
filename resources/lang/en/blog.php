@@ -90,6 +90,7 @@
         'gov_customers'=>'Goverment',
         'organization_customers'=>'Organization',
         'solutions'=>'Solutions',
-        'news'=>'News'
+        'news'=>'News',
+        'solution_type'=>'Solution Type'
     ];
 ?>

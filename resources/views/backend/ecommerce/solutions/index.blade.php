@@ -32,6 +32,7 @@
                       <th>{{__('lang.no')}}</th>
                       <th>{{__('lang.image')}}</th>
                       <th>{{__('lang.short_des')}}</th>
+                      <th>{{__('blog.solution_type')}}</th>
                       <th>{{__('lang.status')}}</th>
                       <th>{{__('lang.action')}}</th>
                     </tr>
@@ -52,7 +53,13 @@
                           {{$item->name_en}}
                         @endif
                       </td>
-
+                      <td style="text-align: center">
+                        @if (Config::get('app.locale') == 'lo')
+                          {{$item->solutionname->name_la}}
+                        @elseif (Config::get('app.locale') == 'en')
+                          {{$item->solutionname->name_en}}
+                        @endif
+                      </td>
                       <td style="text-align: center">
                         @if ($item->status == 1)
                           <label class="text-success">{{__('lang.active')}}</label>
@@ -60,7 +67,7 @@
                           <label class="text-danger">{{__('lang.inactive')}}</label>
                         @endif
                       </td>
-                      <td>
+                      <td style="text-align: center">
                         <form action=" {{ route('solutions.destroy', $item->id) }} " method="POST">
                           @csrf
                           @method('DELETE')

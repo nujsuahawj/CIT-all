@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSolutionsTable extends Migration
+class CreateSolutionTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,10 @@ class CreateSolutionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('solutions', function (Blueprint $table) {
+        Schema::create('solution_types', function (Blueprint $table) {
             $table->id();
-            $table->string('image')->nullable();
-            $table->integer('solution_type_id')->nullable();
             $table->string('name_la')->nullable();
             $table->string('name_en')->nullable();
-            $table->text('short_des_la')->nullable();
-            $table->text('short_des_en')->nullable();
-            $table->longtext('des_la')->nullable();
-            $table->longtext('des_en')->nullable();
-            $table->integer('status')->default('1');
             $table->timestamps();
         });
     }
@@ -35,6 +28,6 @@ class CreateSolutionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('solutions');
+        Schema::dropIfExists('solution_types');
     }
 }

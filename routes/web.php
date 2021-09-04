@@ -116,7 +116,7 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::resource('/service',ServiceController::class);
     Route::resource('/customer', App\Http\Controllers\Backend\Ecommerce\CustomerController::class);
     Route::resource('/solutions', App\Http\Controllers\Backend\Ecommerce\SolutionController::class);
-    
+    Route::resource('/solution_type', App\Http\Controllers\Backend\Ecommerce\SolutionTypeController::class);
 
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
 

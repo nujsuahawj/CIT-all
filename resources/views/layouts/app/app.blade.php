@@ -204,7 +204,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         contents: '<i class="note-icon-picture"></i> ',
         tooltip: 'File Manager',
         click: function() {
-          window.open('/file-manager/summernote', 'fm', 'width=1400,height=800');
+          window.open('/file-manager/summernote', 'fm', 'width=1024,height=800');
         }
       });
       return button.render();
@@ -218,6 +218,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ['color', ['color']],
         ['para', ['ul', 'ol', 'paragraph']],
         ['height', ['height']],
+        ['insert', ['link', 'picture', 'video']],
         ['fm-button', ['fm']],
       ],
       buttons: {
@@ -227,7 +228,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   });
   // set file link
   function fmSetLink(url) {
-    $('#summernote').summernote('insertImage', url);
+    $('.summernote').summernote('insertImage', url);
   }
 </script>
 

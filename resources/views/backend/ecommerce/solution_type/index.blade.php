@@ -4,12 +4,12 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1>{{__('lang.depart')}}</h1>
+              <h1>{{__('blog.solution_type')}}</h1>
             </div>
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="{{route('dashboard.index')}}">{{__('lang.home')}}</a></li>
-                <li class="breadcrumb-item active">{{__('lang.depart')}}</li>
+                <li class="breadcrumb-item active">{{__('blog.solution_type')}}</li>
               </ol>
             </div>
           </div>
@@ -23,14 +23,14 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                  <a href="{{route('depart.create')}}" class="btn btn-primary btn-sm"><i class="fas fa-add"></i>{{__('lang.add')}}</a>
+                  <a href="{{route('solution_type.create')}}" class="btn btn-primary btn-sm"><i class="fas fa-add"></i>{{__('lang.add')}}</a>
                 </div>
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr style="text-align: center">
-                      <th>{{__('lang.no')}}</th>
-                      <th>{{__('lang.departname')}}</th>
+                      <th style="text-align: center">{{__('lang.no')}}</th>
+                      <th>{{__('blog.solution_type')}}</th>
                       <th>{{__('lang.action')}}</th>
                     </tr>
                     </thead>
@@ -39,16 +39,22 @@
                       $stt = 1;    
                     @endphp
 
-                    @foreach ($depart as $dp)
+                    @foreach ($solution_type as $item)
                     <tr>
-                      <td width="10%">{{$stt++}}</td>
-                      <td>{{$dp->name}}</td>
+                      <td width="5%" style="text-align: center">{{$stt++}}</td>
                       <td>
-                        <form action=" {{ route('depart.destroy', $dp->id) }} " method="POST">
+                          @if (Config::get('app.locale') == 'lo')
+                            {{$item->name_la}}
+                          @elseif(Config::get('app.locale') == 'en')
+                            {{$item->name_en}}
+                          @endif
+                      </td>
+                      <td>
+                        <form action=" {{ route('solution_type.destroy', $item->id) }} " method="POST">
                           @csrf
                           @method('DELETE')
 
-                            <a href="{{ route('depart.edit', $dp->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="{{ route('solution_type.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
 
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('ທ່ານຕ້ອງການລຶບຂໍ້ມູນນີ້ ຫຼື ບໍ?')"><i class="fas fa-trash"></i></button>
 

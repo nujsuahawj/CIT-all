@@ -29,13 +29,29 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6">
-                        <div class="form-group">
-                            <label for="image">{{__('lang.image')}}</label>
-                            <input type="file" name="image" accept="image/png, image/gif, image/jpeg" class="form-control {{ $errors->has('image') ? ' is-invalid' : '' }}" >
-                            @if ($errors->has('image'))
-                            <span class="invalid-feedback"> <strong>{{ $errors->first('image') }}</strong></span>
-                            @endif
+                          <div class="form-group">
+                              <label for="image">{{__('lang.image')}}</label>
+                              <input type="file" name="image" accept="image/png, image/gif, image/jpeg" class="form-control {{ $errors->has('image') ? ' is-invalid' : '' }}" >
+                              @if ($errors->has('image'))
+                              <span class="invalid-feedback"> <strong>{{ $errors->first('image') }}</strong></span>
+                              @endif
+                          </div>
                         </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label>{{__('blog.solution_type')}}</label>
+                            <select class="form-control" name="solution_type_id">
+                              @foreach ($solution_types as $item)
+                                <option value="{{$item->id}}">
+                                  @if (Config::get('app.locale') == 'lo')
+                                    {{ $item->name_la }}
+                                  @elseif (Config::get('app.locale') == 'en')
+                                    {{ $item->name_en }}
+                                  @endif
+                                </option>
+                                @endforeach
+                            </select>
+                          </div>
                         </div>
                     </div>
 

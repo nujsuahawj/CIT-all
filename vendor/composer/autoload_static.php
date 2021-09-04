@@ -668,6 +668,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'App\\Models\\Service' => __DIR__ . '/../..' . '/app/Models/Service.php',
         'App\\Models\\Slide' => __DIR__ . '/../..' . '/app/Models/Slide.php',
         'App\\Models\\Solution' => __DIR__ . '/../..' . '/app/Models/Solution.php',
+        'App\\Models\\SolutionType' => __DIR__ . '/../..' . '/app/Models/SolutionType.php',
         'App\\Models\\StatusAcc' => __DIR__ . '/../..' . '/app/Models/StatusAcc.php',
         'App\\Models\\StorageFile' => __DIR__ . '/../..' . '/app/Models/StorageFile.php',
         'App\\Models\\Transection' => __DIR__ . '/../..' . '/app/Models/Transection.php',

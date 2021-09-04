@@ -146,6 +146,7 @@ return array(
     'App\\Models\\Service' => $baseDir . '/app/Models/Service.php',
     'App\\Models\\Slide' => $baseDir . '/app/Models/Slide.php',
     'App\\Models\\Solution' => $baseDir . '/app/Models/Solution.php',
+    'App\\Models\\SolutionType' => $baseDir . '/app/Models/SolutionType.php',
     'App\\Models\\StatusAcc' => $baseDir . '/app/Models/StatusAcc.php',
     'App\\Models\\StorageFile' => $baseDir . '/app/Models/StorageFile.php',
     'App\\Models\\Transection' => $baseDir . '/app/Models/Transection.php',

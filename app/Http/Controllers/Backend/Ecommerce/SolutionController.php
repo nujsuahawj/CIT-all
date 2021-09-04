@@ -5,6 +5,7 @@ namespace App\Http\Controllers\backend\ecommerce;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Solution;
+use App\Models\SolutionType;
 
 class SolutionController extends Controller
 {
@@ -26,7 +27,8 @@ class SolutionController extends Controller
      */
     public function create()
     {
-        return view('backend.ecommerce.solutions.create');
+        $solution_types = SolutionType::all();
+        return view('backend.ecommerce.solutions.create', compact('solution_types'));
     }
 
     /**
@@ -52,6 +54,7 @@ class SolutionController extends Controller
         Solution::create([
             'name_la'=>$request->name_la,
             'name_en'=>$request->name_en,
+            'solution_type_id'=>$request->solution_type_id,
             'short_des_la'=>$request->short_des_la,
             'short_des_en'=>$request->short_des_en,
             'des_la'=>$request->des_la,
@@ -83,7 +86,8 @@ class SolutionController extends Controller
     public function edit($id)
     {
         $solutions = Solution::find($id);
-        return view('backend.ecommerce.solutions.edit', compact('solutions'));
+        $solution_types = SolutionType::all();
+        return view('backend.ecommerce.solutions.edit', compact('solutions','solution_types'));
     }
 
     /**
@@ -111,6 +115,7 @@ class SolutionController extends Controller
             $solution_data = [
                 'name_la'=>$request->name_la,
                 'name_en'=>$request->name_en,
+                'solution_type_id'=>$request->solution_type_id,
                 'short_des_la'=>$request->short_des_la,
                 'short_des_en'=>$request->short_des_en,
                 'des_la'=>$request->des_la,
@@ -123,6 +128,7 @@ class SolutionController extends Controller
             $solution_data = [
                 'name_la'=>$request->name_la,
                 'name_en'=>$request->name_en,
+                'solution_type_id'=>$request->solution_type_id,
                 'short_des_la'=>$request->short_des_la,
                 'short_des_en'=>$request->short_des_en,
                 'des_la'=>$request->des_la,
