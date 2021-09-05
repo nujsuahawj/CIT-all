@@ -15,7 +15,23 @@
     <div class="container-fluid pt-5 pb-3">
         <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="bg-secondary pr-3">{{__('blog.solutions')}}</span></h2>
         <div class="row px-xl-5">
-            <div class="col-md-12 pb-2">
+            <div class="col-md-6 pb-2">
+                <div class="form-group">
+                    <select wire:model="searchByType" class="form-control">
+                        <option value="" selected>{{__('lang.select')}}</option>
+                          @foreach($solution_type as $item)
+                            <option value="{{ $item->id }}">
+                                @if (Config::get('app.locale') == 'lo')
+                                    {{ $item->name_la }}
+                                @elseif(Config::get('app.locale') == 'en')
+                                    {{ $item->name_en }}
+                                @endif
+                            </option>
+                          @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6 pb-2">
                 <input type="text" wire:model="search" class="form-control" placeholder="{{__('lang.search')}}">
             </div>
         </div>
