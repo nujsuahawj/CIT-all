@@ -32,3 +32,5 @@ Route::resource('/customer', App\Http\Controllers\Api\CustomerApiController::cla
 Route::get('/other_customer', [App\Http\Controllers\Api\CustomerApiController::class,'index_other']);
 Route::resource('/about', App\Http\Controllers\Api\PageApiController::class);
 Route::get('/term', [App\Http\Controllers\Api\PageApiController::class,'term']);
+Route::resource('/solutions', App\Http\Controllers\Api\SolutionApiController::class);
+Route::resource('/news', App\Http\Controllers\Api\NewsApiController::class);
