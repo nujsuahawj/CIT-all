@@ -53,6 +53,7 @@
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
+                    <!--
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{{__('blog.my_account')}}</button>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -61,7 +62,7 @@
                             <button class="dropdown-item" type="button"><a href="{{route('cart')}}" class="text-dark">{{__('blog.cart')}}</a></button>
                             <button class="dropdown-item" type="button"><a href="{{route('checkout')}}" class="text-dark">{{__('blog.checkout')}}</a></button>
                         </div>
-                    </div>
+                    </div>-->
                     <!--
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{{__('lang.currency')}}</button>

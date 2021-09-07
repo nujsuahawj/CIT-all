@@ -91,6 +91,7 @@
         'organization_customers'=>'Organization',
         'solutions'=>'Solutions',
         'news'=>'News',
-        'solution_type'=>'Solution Type'
+        'solution_type'=>'Solution Type',
+        'news_detail'=>'News description'
     ];
 ?>

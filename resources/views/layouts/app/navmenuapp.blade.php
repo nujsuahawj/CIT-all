@@ -25,6 +25,7 @@
               <li class="dropdown-submenu dropdown-hover">
                 <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">{{__('lang.module_website')}}</a>
                 <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
+                  <li><a href="{{route('news.index')}}" class="dropdown-item">{{__('blog.news')}}</a></li>
                   <li><a href="{{route('page.index')}}" class="dropdown-item">{{__('lang.page')}}</a></li>
                   <li><a href="{{route('product.index')}}" class="dropdown-item">{{__('lang.product')}}</a></li>
                   <li><a href="{{route('catalog.index')}}" class="dropdown-item">{{__('lang.catalog')}}</a></li>

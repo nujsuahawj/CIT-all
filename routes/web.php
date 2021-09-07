@@ -59,7 +59,8 @@ Route::get('/cart', App\Http\Livewire\Frontend\CartComponent::class)->name('cart
 Route::get('/checkout', App\Http\Livewire\Frontend\CheckoutComponent::class)->name('checkout');
 Route::get('/wishlist', App\Http\Livewire\Frontend\WishlistComponent::class)->name('wishlist');
 Route::get('/terms', App\Http\Livewire\Frontend\TermsComponent::class)->name('terms');
-Route::get('/news', App\Http\Livewire\Frontend\NewsComponent::class)->name('news');
+Route::get('/frontend/news', App\Http\Livewire\Frontend\NewsComponent::class)->name('news');
+Route::get('/frontend/news/news_detail/{id}', App\Http\Livewire\Frontend\NewsDetailComponent::class)->name('news_detail');
 
 Route::resource('/loginadmincit', LoginController::class);
 
@@ -108,6 +109,7 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::PATCH('/aceptedpayroll/{id}',[PayrollController::class,'aceptedpayroll'])->name('payroll.aceptedpayroll');
     Route::DELETE('/deletepayroll/{id}',[PayrollController::class,'deletepayroll'])->name('payroll.deletepayroll');
 
+    Route::resource('/news', App\Http\Controllers\Backend\Ecommerce\NewsController::class);
     Route::resource('/page', App\Http\Controllers\Backend\Ecommerce\PageController::class);
     Route::resource('/product',ProductController::class);
     Route::resource('/catalog',CatalogController::class);
