@@ -235,6 +235,7 @@
                             <a class="text-secondary mb-2" href="{{route('news')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.news')}}</a>
                         </div>
                     </div>
+                    <!--
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">{{__('blog.my_account')}}</h5>
                         <div class="d-flex flex-column justify-content-start">
@@ -245,17 +246,28 @@
                             <a class="text-secondary mb-2" href="{{route('terms')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.terms')}}</a>
                             <a class="text-secondary" href="{{route('contact')}}"><i class="fa fa-angle-right mr-2"></i>{{__('blog.contact')}}</a>
                         </div>
-                    </div>
+                    </div>-->
+                    
                     <div class="col-md-4 mb-5">
                         <h5 class="text-secondary text-uppercase mb-4">{{__('blog.download_app')}}</h5>
                         <div class="row">
                             <div class="col-lg-12">
-                                <a href="{{$branchs->app_store}}" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="30" class="mb-1"></a> <br>
-                                <a href="{{$branchs->play_store}}" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="30" class="mb-1"></a> <br>
-                                <a href="{{$branchs->app_gallery}}" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="30"></a>
+                                <a href="{{$branchs->app_store}}" target="_blank"><img src="{{asset('images/appgle-app-store.png')}}" height="60" class="mb-1"></a> <br>
+                                <a href="{{$branchs->play_store}}" target="_blank"><img src="{{asset('images/google-play-store.png')}}" height="60" class="mb-1"></a> <br>
+                                <a href="{{$branchs->app_gallery}}" target="_blank"><img src="{{asset('images/huawei-app-gallery.png')}}" height="60"></a>
                             </div>
                         </div>
+                        <!--
                         <h6 class="text-secondary text-uppercase mt-4 mb-3">{{__('blog.follow_us')}}</h6>
+                        <div class="d-flex">
+                            <a class="btn btn-primary btn-square mr-2" href="{{$branchs->whatapps}}" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="{{$branchs->fanpage}}" target="_blank"><i class="fab fa-facebook-f" target="_blank"></i></a>
+                            <a class="btn btn-primary btn-square mr-2" href="{{$branchs->youtube}}" target="_blank"><i class="fab fa-youtube"></i></a>
+                        </div>-->
+                    </div>
+
+                    <div class="col-md-4 mb-5">
+                        <h5 class="text-secondary text-uppercase mb-4">{{__('blog.follow_us')}}</h5>
                         <div class="d-flex">
                             <a class="btn btn-primary btn-square mr-2" href="{{$branchs->whatapps}}" target="_blank"><i class="fab fa-whatsapp"></i></a>
                             <a class="btn btn-primary btn-square mr-2" href="{{$branchs->fanpage}}" target="_blank"><i class="fab fa-facebook-f" target="_blank"></i></a>

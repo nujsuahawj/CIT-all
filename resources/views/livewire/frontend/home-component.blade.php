@@ -39,19 +39,19 @@
 
             <div class="col-lg-4">
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="{{asset('frontend/img/offer-1.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('images/it-solutions.jpg')}}" alt="">
                     <div class="offer-text">
                         <!--<h6 class="text-white text-uppercase">Save 20%</h6>-->
-                        <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="{{route('services')}}" class="btn btn-outline-light">{{__('lang.detail')}}</a>
+                        <h3 class="text-white mb-3">{{__('blog.solutions')}}</h3>
+                        <a href="{{route('solutions')}}" class="btn btn-outline-light">{{__('lang.detail')}}</a>
                     </div>
                 </div>
                 <div class="product-offer mb-30" style="height: 200px;">
-                    <img class="img-fluid" src="{{asset('frontend/img/offer-2.jpg')}}" alt="">
+                    <img class="img-fluid" src="{{asset('images/customers.jpg')}}" alt="">
                     <div class="offer-text">
                         <!--<h6 class="text-white text-uppercase">Save 20%</h6>-->
-                        <h3 class="text-white mb-3">Special Offer</h3>
-                        <a href="{{route('services')}}" class="btn btn-outline-light">{{__('lang.detail')}}</a>
+                        <h3 class="text-white mb-3">{{__('blog.customers')}}</h3>
+                        <a href="{{route('customers')}}" class="btn btn-outline-light">{{__('lang.detail')}}</a>
                     </div>
                 </div>
             </div>

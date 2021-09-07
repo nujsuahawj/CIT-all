@@ -53,7 +53,6 @@ Route::get('/services/service_detail/{id}', App\Http\Livewire\Frontend\ServiceDe
 Route::get('/customers', App\Http\Livewire\Frontend\CustomersComponent::class)->name('customers');
 Route::get('/frontend/solutions', App\Http\Livewire\Frontend\SolutionsComponent::class)->name('solutions');
 Route::get('/frontend/solutions/solution_detail/{id}', App\Http\Livewire\Frontend\SolutionsDetailComponent::class)->name('solution_detail');
-Route::get('/success', App\Http\Livewire\Frontend\SuccesCasesComponent::class)->name('success');
 Route::get('/about', App\Http\Livewire\Frontend\AboutComponent::class)->name('about');
 Route::get('/contact', App\Http\Livewire\Frontend\ContactComponent::class)->name('contact');
 Route::get('/cart', App\Http\Livewire\Frontend\CartComponent::class)->name('cart');
