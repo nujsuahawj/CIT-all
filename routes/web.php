@@ -62,6 +62,10 @@ Route::get('/terms', App\Http\Livewire\Frontend\TermsComponent::class)->name('te
 Route::get('/frontend/news', App\Http\Livewire\Frontend\NewsComponent::class)->name('news');
 Route::get('/frontend/news/news_detail/{id}', App\Http\Livewire\Frontend\NewsDetailComponent::class)->name('news_detail');
 
+//Customers CustomerLoginComponent
+Route::get('/customer/sign_in', App\Http\Livewire\Frontend\Auth\CustomerLoginComponent::class)->name('customer_sign_in');
+Route::get('/customer/register', App\Http\Livewire\Frontend\Auth\CustomerRegisterComponent::class)->name('customer_register');
+
 Route::resource('/loginadmincit', LoginController::class);
 
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
@@ -70,6 +74,10 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Route::group(['middleware'=>'adminLogin'],function()
 {
+    //Customer
+    Route::get('/customer/dashboard', App\Http\Livewire\Frontend\Customer\DashboardComponent::class)->name('customer.dashboard');
+    Route::get('/customer/profile/{id}', App\Http\Livewire\Frontend\Auth\CustomerProfileComponent::class)->name('customer.profile');
+    Route::get('/customer/sign_out', [App\Http\Livewire\Frontend\Auth\CustomerLoginComponent::class,'signOut'])->name('customer_sign_out');
 
     //Backend
     Route::get('/module', [App\Http\Controllers\Backend\ModuleController::class,'index'])->name('module.index');

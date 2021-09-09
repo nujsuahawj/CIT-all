@@ -92,6 +92,12 @@
         'solutions'=>'Solutions',
         'news'=>'News',
         'solution_type'=>'Solution Type',
-        'news_detail'=>'News description'
+        'news_detail'=>'News description',
+        'input_user_name_for_sign_in'=>'Please input data for signin',
+        'customer_dashboard'=>'Dashboard',
+        'register'=>'Register',
+        'input_data_for_register'=>'Please input data for register',
+        'history'=>'History',
+        'profile'=>'Profile'
     ];
 ?>

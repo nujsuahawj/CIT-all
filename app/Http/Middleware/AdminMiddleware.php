@@ -24,11 +24,11 @@ class AdminMiddleware
             if($user->role_id != 0)
                 return $next($request);
             else
-                return redirect()->route('loginadmincit.index');
+                return redirect()->route('home');
         }
         else
         {
-            return redirect()->route('loginadmincit.index');
+            return redirect()->route('home');
         }    
     }
 }

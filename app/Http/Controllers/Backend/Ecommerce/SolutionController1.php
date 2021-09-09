@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\Ecommerce;
+namespace App\Http\Controllers\backend\ecommerce;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -158,6 +158,6 @@ class SolutionController extends Controller
         {
             $solutions->delete();
         }
-        return redirect()->back()->with('success','ລຶບຂໍ້ມູນສຳເລັດ!');
+        return redirect()->back()->with('success','ລຶບຂໍ້ມູນສຳເລັດ!'); 
     }
 }

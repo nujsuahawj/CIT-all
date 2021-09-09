@@ -38,11 +38,11 @@
         'home'=>'ໜ້າແລກ',
         'about'=>'ກ່ຽວກັບ',
         'portfolio'=>'ພາບການເຄື່ອນໄຫວ',
-        'contact'=>'ຕິດຕໍ່ພົວພັນ',
+        'contact'=>'ຕິດຕໍ່',
         'email'=>'ທີຢູ່ອີເມວ',
         'hotline'=>'ໂທເລີຍ',
         'blogs'=>'ການເຄື່ອນໄຫວ',
-        'service'=>'ການບໍລິການ',
+        'service'=>'ບໍລິການ',
         'quick_link'=>'ເມນູ',
         'blogdetail'=>'ລາຍລະອຽດການເຄື່ອນໄຫວ',
         'testimonial'=>'ຄວາມຄິດເຫັນປະຊາຊົນ',
@@ -94,6 +94,12 @@
         'solution_detail'=>'ລາຍລະອຽດໂຊລູຊັ່ນ',
         'news'=>'ການເຄື່ອນໄຫວ',
         'solution_type'=>'ປະເພດໂຊລູຊັ່ນ',
-        'news_detail'=>'ລາຍລະອຽດການເຄື່ອນໄຫວ'
+        'news_detail'=>'ລາຍລະອຽດການເຄື່ອນໄຫວ',
+        'input_user_name_for_sign_in'=>'ກະລຸນາໃສ່ຊື່ຜູ້ໃຊ້ ຫຼື ລະຫັດຜ່ານ',
+        'customer_dashboard'=>'Dashboard',
+        'register'=>'ລົງທະບຽນ',
+        'input_data_for_register'=>'ເພີ່ມຂໍ້ມູນເພື່ອລົງທະບຽນ',
+        'history'=>'ລາຍການສັ່ງຊື້ຜ່ານມາ',
+        'profile'=>'ຂໍ້ມູນສ່ວນຕົວ'
     ];
 ?>

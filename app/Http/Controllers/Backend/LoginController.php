@@ -48,8 +48,14 @@ class LoginController extends Controller
             'password'=>$request->password
         ]))
         {
-            //auth()->user()->assignRole('admin');
-            return redirect()->route('module.index')->with('success','ເຂົ້າລະບົບສຳເລັດ!');;
+            if(auth()->user()->role_id != 9)
+            {
+                //auth()->user()->assignRole('admin');
+                return redirect()->route('module.index')->with('success','ເຂົ້າລະບົບສຳເລັດ!');
+            }else
+            {
+                return redirect()->back()->with('message','ເບີໂທ ຫຼື ລະຫັດຜ່ານບໍ່ຖື! ກະລຸນາກວດຄືນໃໝ່');
+            }
         }
         else
         {

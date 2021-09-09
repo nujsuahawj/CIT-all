@@ -53,16 +53,19 @@
             </div>
             <div class="col-lg-6 text-center text-lg-right">
                 <div class="d-inline-flex align-items-center">
-                    <!--
+                    
                     <div class="btn-group">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{{__('blog.my_account')}}</button>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <button class="dropdown-item" type="button"><a href="" class="text-dark">{{__('blog.sign_in')}}</a></button>
-                            <button class="dropdown-item" type="button"><a href="" class="text-dark">{{__('blog.sign_out')}}</a></button>
-                            <button class="dropdown-item" type="button"><a href="{{route('cart')}}" class="text-dark">{{__('blog.cart')}}</a></button>
-                            <button class="dropdown-item" type="button"><a href="{{route('checkout')}}" class="text-dark">{{__('blog.checkout')}}</a></button>
+                            @auth
+                                <button class="dropdown-item" type="button"><a href="{{route('customer.dashboard')}}" class="text-dark"><i class="fas fa-layer-group"></i> {{__('blog.customer_dashboard')}}</a></button>
+                                <button class="dropdown-item" type="button"><a href="{{route('customer_sign_out')}}" class="text-dark"><i class="fa fa-unlock"></i> {{__('blog.sign_out')}}</a></button>
+                            @else
+                                <button class="dropdown-item" type="button"><a href="{{route('customer_sign_in')}}" class="text-dark"><i class="fa fa-key"></i> {{__('blog.sign_in')}}</a></button>
+                                <button class="dropdown-item" type="button"><a href="{{route('customer_register')}}" class="text-dark"><i class="fa fa-user-plus"></i> {{__('blog.register')}}</a></button>
+                            @endauth
                         </div>
-                    </div>-->
+                    </div>
                     <!--
                     <div class="btn-group mx-2">
                         <button type="button" class="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">{{__('lang.currency')}}</button>
@@ -174,6 +177,8 @@
                             <a href="{{route('solutions')}}" class="nav-item nav-link">{{__('blog.solutions')}}</a>
                             <a href="{{route('customers')}}" class="nav-item nav-link">{{__('blog.customers')}}</a>
                             <a href="{{route('news')}}" class="nav-item nav-link">{{__('blog.news')}}</a>
+                            <a href="{{route('cart')}}" class="nav-item nav-link">{{__('blog.cart')}}</a>
+                            <a href="{{route('checkout')}}" class="nav-item nav-link">{{__('blog.checkout')}}</a>
                             <a href="{{route('about')}}" class="nav-item nav-link">{{__('blog.about')}}</a>
                             <a href="{{route('contact')}}" class="nav-item nav-link">{{__('blog.contact')}}</a>
                             <!--

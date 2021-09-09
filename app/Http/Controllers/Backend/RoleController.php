@@ -15,7 +15,7 @@ class RoleController extends Controller
      */
     public function index()
     {
-        $role = Role::where('del',0)->get();
+        $role = Role::all();
         return view('backend.settings.role.index', compact('role'));
     }
 
@@ -97,8 +97,7 @@ class RoleController extends Controller
     public function destroy($id)
     {
         $role = Role::find($id);
-        $role->del = 1;
-        $role->save();
+        $role->delete();
         return redirect()->route('role.index')->with('success','ລຶບຂໍ້ມູນສຳເລັດ!');
     }
 }

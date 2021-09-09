@@ -18,7 +18,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $user = User::where('del',0)->get();
+        $user = User::orderBy('id','desc')->get();
         return view('backend.settings.user.index', compact('user'));
     }
 
