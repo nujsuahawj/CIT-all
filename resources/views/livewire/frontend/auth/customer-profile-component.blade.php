@@ -52,6 +52,10 @@
                             @error('email') <span style="color: red" class="error">{{ $message }}</span> @enderror
                         </div>
                         <div class="form-group">
+                            <input type="text" wire:model="address" wire:keydown.enter="register" class="form-control @error('address') is-invalid @enderror" placeholder="{{__('lang.address')}}">
+                            @error('address') <span style="color: red" class="error">{{ $message }}</span> @enderror
+                        </div>
+                        <div class="form-group">
                             <input type="password" wire:model="password" wire:keydown.enter="register" class="form-control @error('password') is-invalid @enderror" placeholder="{{__('lang.password')}}">
                             @error('password') <span style="color: red" class="error">{{ $message }}</span> @enderror
                         </div>

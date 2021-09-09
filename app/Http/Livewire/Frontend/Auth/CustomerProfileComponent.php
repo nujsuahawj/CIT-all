@@ -9,7 +9,7 @@ use DB;
 
 class CustomerProfileComponent extends Component
 {
-    public $name, $phone, $email, $password, $confirmpassword;
+    public $name, $phone, $email, $address, $password, $confirmpassword;
 
     public function mount()
     {
@@ -17,6 +17,7 @@ class CustomerProfileComponent extends Component
         $this->name = $user->name;
         $this->phone = $user->phone;
         $this->email = $user->email;
+        $this->address = $user->address;
     }
 
     public function render()
@@ -49,6 +50,7 @@ class CustomerProfileComponent extends Component
                 'name'=> $this->name,
                 'phone'=> $this->phone,
                 'email'=> $this->email,
+                'address'=> $this->address,
                 'password'=> bcrypt($this->password),
             ];
         }
@@ -58,6 +60,7 @@ class CustomerProfileComponent extends Component
                 'name'=> $this->name,
                 'phone'=> $this->phone,
                 'email'=> $this->email,
+                'address'=> $this->address,
             ];
         }
         DB::table('users')->where('id', $updateId)->update($user_data);
