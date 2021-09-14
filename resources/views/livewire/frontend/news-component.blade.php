@@ -41,6 +41,15 @@
             @endforeach
 
         </div>
+
+        <div class="col-12">
+            <nav>
+            <ul class="pagination justify-content-center">
+                {{ $news->links() }}
+            </ul>
+            </nav>
+        </div>
+
     </div>
     <!-- Offer End -->
 </div>

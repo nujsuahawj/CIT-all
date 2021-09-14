@@ -84,14 +84,19 @@
                     </div>
                 </div>
                 <div class="d-inline-flex align-items-center d-block d-lg-none">
+                    <!--
                     <a href="" class="btn px-0 ml-2">
                         <i class="fas fa-heart text-dark"></i>
                         <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
-                    </a>
-                    <a href="" class="btn px-0 ml-2">
+                    </a>-->
+                    
+                    @if(Cart::count() > 0)
+                    <a href="{{route('cart')}}" class="btn px-0 ml-2">
                         <i class="fas fa-shopping-cart text-dark"></i>
-                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 2px;">0</span>
+                        <span class="badge text-dark border border-dark rounded-circle" style="padding-bottom: 4px;">{{Cart::count()}}</span>
                     </a>
+                    @endif
+
                 </div>
             </div>
         </div>
@@ -192,14 +197,18 @@
                             -->
                         </div>
                         <div class="navbar-nav ml-auto py-0 d-none d-lg-block">
+                            <!--
                             <a href="" class="btn px-0">
                                 <i class="fas fa-heart text-primary"></i>
                                 <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
-                            </a>
-                            <a href="" class="btn px-0 ml-3">
+                            </a>-->
+
+                            @if(Cart::count() > 0)
+                            <a href="{{route('cart')}}" class="btn px-0 ml-3">
                                 <i class="fas fa-shopping-cart text-primary"></i>
-                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">0</span>
+                                <span class="badge text-secondary border border-secondary rounded-circle" style="padding-bottom: 2px;">{{Cart::count()}}</span>
                             </a>
+                            @endif
                         </div>
                     </div>
                 </nav>

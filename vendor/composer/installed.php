@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'bb47c72d568c9e2e920d3d0a2c361d144f0bdd64',
+        'reference' => '7d7ab617c6d4e6b78afd648ff918bf5a9ca869d8',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -210,6 +210,15 @@
             'aliases' => array(),
             'reference' => '8c3d0a3f6af734494ad8f6fbbee0ba92422859f3',
             'dev_requirement' => true,
+        ),
+        'hardevine/shoppingcart' => array(
+            'pretty_version' => '3.0',
+            'version' => '3.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../hardevine/shoppingcart',
+            'aliases' => array(),
+            'reference' => '8dea942f3c61ed450fe7dfee968dc9943fa649f8',
+            'dev_requirement' => false,
         ),
         'illuminate/auth' => array(
             'dev_requirement' => false,
@@ -436,7 +445,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'bb47c72d568c9e2e920d3d0a2c361d144f0bdd64',
+            'reference' => '7d7ab617c6d4e6b78afd648ff918bf5a9ca869d8',
             'dev_requirement' => false,
         ),
         'laravel/sanctum' => array(

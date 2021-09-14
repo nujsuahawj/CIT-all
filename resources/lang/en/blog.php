@@ -98,6 +98,7 @@
         'register'=>'Register',
         'input_data_for_register'=>'Please input data for register',
         'history'=>'History',
-        'profile'=>'Profile'
+        'profile'=>'Profile',
+        'tax'=>'Tax'
     ];
 ?>

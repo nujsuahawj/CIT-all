@@ -57,6 +57,15 @@
             @endforeach
 
         </div>
+
+        <div class="col-12">
+            <nav>
+            <ul class="pagination justify-content-center">
+                {{ $solutions->links() }}
+            </ul>
+            </nav>
+        </div>
+
     </div>
     <!-- Offer End -->
 </div>

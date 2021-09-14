@@ -146,6 +146,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
             'GuzzleHttp\\Promise\\' => 19,
             'GuzzleHttp\\' => 11,
             'GrahamCampbell\\ResultType\\' => 26,
+            'Gloudemans\\Shoppingcart\\' => 24,
         ),
         'F' => 
         array (
@@ -440,6 +441,10 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         array (
             0 => __DIR__ . '/..' . '/graham-campbell/result-type/src',
         ),
+        'Gloudemans\\Shoppingcart\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/hardevine/shoppingcart/src',
+        ),
         'Fruitcake\\Cors\\' => 
         array (
             0 => __DIR__ . '/..' . '/fruitcake/laravel-cors/src',
@@ -607,6 +612,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'App\\Http\\Controllers\\Backend\\Ecommerce\\ProductController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Ecommerce/ProductController.php',
         'App\\Http\\Controllers\\Backend\\Ecommerce\\ServiceController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Ecommerce/ServiceController.php',
         'App\\Http\\Controllers\\Backend\\Ecommerce\\SlideController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Ecommerce/SlideController.php',
+        'App\\Http\\Controllers\\Backend\\Ecommerce\\SolutionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Ecommerce/SolutionController.php',
         'App\\Http\\Controllers\\Backend\\Ecommerce\\SolutionTypeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/Ecommerce/SolutionTypeController.php',
         'App\\Http\\Controllers\\Backend\\EmployeeController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/EmployeeController.php',
         'App\\Http\\Controllers\\Backend\\LocalController' => __DIR__ . '/../..' . '/app/Http/Controllers/Backend/LocalController.php',
@@ -657,6 +663,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'App\\Models\\Branch' => __DIR__ . '/../..' . '/app/Models/Branch.php',
         'App\\Models\\Cart' => __DIR__ . '/../..' . '/app/Models/Cart.php',
         'App\\Models\\CartDetail' => __DIR__ . '/../..' . '/app/Models/CartDetail.php',
+        'App\\Models\\Catalog' => __DIR__ . '/../..' . '/app/Models/Catalog.php',
         'App\\Models\\Currency' => __DIR__ . '/../..' . '/app/Models/Currency.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
         'App\\Models\\CustomerType' => __DIR__ . '/../..' . '/app/Models/CustomerType.php',
@@ -675,6 +682,7 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'App\\Models\\Page' => __DIR__ . '/../..' . '/app/Models/Page.php',
         'App\\Models\\Payroll' => __DIR__ . '/../..' . '/app/Models/Payroll.php',
         'App\\Models\\Position' => __DIR__ . '/../..' . '/app/Models/Position.php',
+        'App\\Models\\Product' => __DIR__ . '/../..' . '/app/Models/Product.php',
         'App\\Models\\Province' => __DIR__ . '/../..' . '/app/Models/Province.php',
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\Salary' => __DIR__ . '/../..' . '/app/Models/Salary.php',
@@ -1561,6 +1569,16 @@ class ComposerStaticInitd2696dd5c05d71379c4bad035841bd22
         'Fideloper\\Proxy\\TrustedProxyServiceProvider' => __DIR__ . '/..' . '/fideloper/proxy/src/TrustedProxyServiceProvider.php',
         'Fruitcake\\Cors\\CorsServiceProvider' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/CorsServiceProvider.php',
         'Fruitcake\\Cors\\HandleCors' => __DIR__ . '/..' . '/fruitcake/laravel-cors/src/HandleCors.php',
+        'Gloudemans\\Shoppingcart\\CanBeBought' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/CanBeBought.php',
+        'Gloudemans\\Shoppingcart\\Cart' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Cart.php',
+        'Gloudemans\\Shoppingcart\\CartItem' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/CartItem.php',
+        'Gloudemans\\Shoppingcart\\CartItemOptions' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/CartItemOptions.php',
+        'Gloudemans\\Shoppingcart\\Contracts\\Buyable' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Contracts/Buyable.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\CartAlreadyStoredException' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Exceptions/CartAlreadyStoredException.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\InvalidRowIDException' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Exceptions/InvalidRowIDException.php',
+        'Gloudemans\\Shoppingcart\\Exceptions\\UnknownModelException' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Exceptions/UnknownModelException.php',
+        'Gloudemans\\Shoppingcart\\Facades\\Cart' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/Facades/Cart.php',
+        'Gloudemans\\Shoppingcart\\ShoppingcartServiceProvider' => __DIR__ . '/..' . '/hardevine/shoppingcart/src/ShoppingcartServiceProvider.php',
         'GrahamCampbell\\ResultType\\Error' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Error.php',
         'GrahamCampbell\\ResultType\\Result' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Result.php',
         'GrahamCampbell\\ResultType\\Success' => __DIR__ . '/..' . '/graham-campbell/result-type/src/Success.php',

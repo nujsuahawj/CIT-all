@@ -60,8 +60,9 @@
                     <p class="mb-4">
                         {!! $item->des !!}
                     </p>
-                    <!--
+
                     <div class="d-flex align-items-center mb-4 pt-2">
+                        <!--
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <div class="input-group-btn">
                                 <button class="btn btn-primary btn-minus">
@@ -74,10 +75,10 @@
                                     <i class="fa fa-plus"></i>
                                 </button>
                             </div>
-                        </div>
-                        <button class="btn btn-primary px-3"><i class="fa fa-shopping-cart mr-1"></i> {{__('blog.add_to_cart')}}</button>
-                    </div>-->
-                    <!--
+                        </div>-->
+                        <button class="btn btn-primary px-3" wire:click="addtoCart({{$item->id}},'{{$item->name}}',{{$item->price_online}})"><i class="fa fa-shopping-cart mr-1"></i> {{__('blog.add_to_cart')}}</button>
+                    </div>
+
                     <div class="d-flex pt-2">
                         <strong class="text-dark mr-2">Share on:</strong>
                         <div class="d-inline-flex">
@@ -94,7 +95,7 @@
                                 <i class="fab fa-pinterest"></i>
                             </a>
                         </div>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,10 +186,10 @@
                         <div class="product-img position-relative overflow-hidden">
                             <img class="img-fluid w-100" src="{{asset($item->image)}}" alt="">
                             <div class="product-action">
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href="javascript:void(0)" wire:click="addtoCart({{$item->id}},'{{$item->name}}',{{$item->price_online}})"><i class="fa fa-shopping-cart"></i></a>
+                                <!--<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
                                 <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-sync-alt"></i></a>
-                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>
+                                <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-search"></i></a>-->
                             </div>
                         </div>
                         <div class="text-center py-4">

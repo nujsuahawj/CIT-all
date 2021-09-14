@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Frontend;
 use Livewire\Component;
 use Livewire\WithPagination;
 use DB;
+use Cart;
 
 class ShopComponent extends Component
 {
@@ -40,5 +41,18 @@ class ShopComponent extends Component
         $singleData = DB::connection('mysql2')->table('catalogs')->select('id','name')->where('id', $id)->first();
         $this->searchByCatalog = $singleData->id;
         //dd($this->search_by_cat);
+    }
+
+    //Add to cart
+    public function addtoCart($product_id, $product_name, $product_price)
+    {
+        Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        session()->flash('success_message','ເພີ່ມເຂົ້າກະຕ່າສຳເລັດ!');
+        return redirect()->route('cart');
+    }
+
+    public function ok()
+    {
+        dd('okkkkk');
     }
 }

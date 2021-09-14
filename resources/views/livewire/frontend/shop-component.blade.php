@@ -54,11 +54,11 @@
                                 <div class="product-item bg-light mb-4">
                                     <div class="product-img position-relative overflow-hidden">
                                         <a href="{{route('product_detail', $item->id)}}"><img class="img-fluid w-100" src="{{asset($item->image)}}" alt=""></a>
-                                        <!--
+                                        
                                         <div class="product-action">
-                                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
-                                        </div>-->
+                                            <a class="btn btn-outline-dark btn-square" href="javascript:void(0)" wire:click="addtoCart({{$item->id}},'{{$item->name}}',{{$item->price_online}})"><i class="fa fa-shopping-cart"></i></a>
+                                            <!--<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>-->
+                                        </div>
                                     </div>
                                     <div class="text-center py-4">
                                         <p><a class="h6 text-decoration-none" href="{{route('product_detail', $item->id)}}">{{$item->name}}</a></p>
