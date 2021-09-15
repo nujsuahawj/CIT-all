@@ -50,9 +50,4 @@ class ShopComponent extends Component
         session()->flash('success_message','ເພີ່ມເຂົ້າກະຕ່າສຳເລັດ!');
         return redirect()->route('cart');
     }
-
-    public function ok()
-    {
-        dd('okkkkk');
-    }
 }

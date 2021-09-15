@@ -13,6 +13,8 @@
     <!-- Breadcrumb End -->
     <!-- Cart Start -->
     <div class="container-fluid">
+
+        @if(Cart::count() > 0)
         <div class="row px-xl-5">
             <div class="col-lg-8 table-responsive mb-5">
 
@@ -56,8 +58,9 @@
                         @endforeach
 
                     </tbody>
-
+        
                 </table>
+                
             </div>
             <div class="col-lg-4">
                 <form class="mb-30" action="">
@@ -95,6 +98,20 @@
                 </div>
             </div>
         </div>
+        @else
+        <div class="row px-xl-5">
+            <div class="col">
+                <div class="bg-light p-30">
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="tab-pane-1">
+                            <h4 class="mb-3 text-center">{{__('blog.no_product_in_list')}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endif
+
     </div>
     <!-- Cart End -->
 </div>

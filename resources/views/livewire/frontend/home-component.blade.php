@@ -172,8 +172,8 @@
                     <div class="product-img position-relative overflow-hidden">
                         <img class="img-fluid w-100" src="{{asset($item->image)}}" alt="">
                         <div class="product-action">
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="fa fa-shopping-cart"></i></a>
-                            <a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>
+                            <a class="btn btn-outline-dark btn-square" href="javascript:void(0)" wire:click="addtoCart({{$item->id}},'{{$item->name}}',{{$item->price_online}})"><i class="fa fa-shopping-cart"></i></a>
+                            <!--<a class="btn btn-outline-dark btn-square" href=""><i class="far fa-heart"></i></a>-->
                         </div>
                     </div>
                     <div class="text-center py-4">

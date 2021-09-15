@@ -24,6 +24,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::resource('/products', ProductApiController::class);
+Route::get('/news_products', [App\Http\Controllers\Api\ProductApiController::class,'getNewProduct']);
+Route::get('/random_products', [App\Http\Controllers\Api\ProductApiController::class,'getRandomProduct']);
 Route::resource('/catalogs', CatalogApiController::class);
 Route::resource('/slide', SlideApiController::class);
 Route::resource('/order', OrderApiController::class);

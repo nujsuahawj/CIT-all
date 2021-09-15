@@ -99,6 +99,7 @@
         'input_data_for_register'=>'Please input data for register',
         'history'=>'History',
         'profile'=>'Profile',
-        'tax'=>'Tax'
+        'tax'=>'Tax',
+        'no_product_in_list'=>'No item in list'
     ];
 ?>

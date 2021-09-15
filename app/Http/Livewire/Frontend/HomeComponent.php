@@ -8,6 +8,7 @@ use App\Models\Slide;
 use App\Models\Service;
 use App\Models\Customer;
 use DB;
+use Cart;
 
 class HomeComponent extends Component
 {
@@ -27,5 +28,13 @@ class HomeComponent extends Component
 
         return view('livewire.frontend.home-component', compact('sliders','services','products','gov_customers','original_customers'))
         ->layout('layouts.frontend.base-frontend');
+    }
+
+    //Add to cart
+    public function addtoCart($product_id, $product_name, $product_price)
+    {
+        Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
+        session()->flash('success_message','ເພີ່ມເຂົ້າກະຕ່າສຳເລັດ!');
+        return redirect()->route('cart');
     }
 }
