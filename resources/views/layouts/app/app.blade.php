@@ -220,6 +220,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         ['height', ['height']],
         ['insert', ['link', 'picture', 'video']],
         ['fm-button', ['fm']],
+        ['view', ['fullscreen', 'codeview', 'help']]
       ],
       buttons: {
         fm: FMButton

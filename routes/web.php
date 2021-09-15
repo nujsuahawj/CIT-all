@@ -123,7 +123,7 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::resource('/catalog',CatalogController::class);
     Route::resource('/slide',SlideController::class);
     Route::resource('/service',ServiceController::class);
-    Route::resource('/customer', App\Http\Controllers\Backend\Ecommerce\CustomerController::class);
+    Route::resource('/customer_logo', App\Http\Controllers\Backend\Ecommerce\CustomerController::class);
     Route::resource('/solutions', App\Http\Controllers\Backend\Ecommerce\SolutionController::class);
     Route::resource('/solution_type', App\Http\Controllers\Backend\Ecommerce\SolutionTypeController::class);
 

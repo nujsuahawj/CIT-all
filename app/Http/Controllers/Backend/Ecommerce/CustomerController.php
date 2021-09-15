@@ -59,7 +59,7 @@ class CustomerController extends Controller
 
         $image->move('upload/customer/',$filename);
 
-        return redirect()->route('customer.index')->with('success','ເພີ່ມຂໍ້ມູນສຳເລັດ!');
+        return redirect()->route('customer_logo.index')->with('success','ເພີ່ມຂໍ້ມູນສຳເລັດ!');
     }
 
     /**
@@ -123,7 +123,7 @@ class CustomerController extends Controller
             ];
         }
         $customer->update($customer_data);
-        return redirect()->route('customer.index')->with('success','ບັນທຶກຂໍ້ມູນສຳເລັດ!');
+        return redirect()->route('customer_logo.index')->with('success','ບັນທຶກຂໍ້ມູນສຳເລັດ!');
     }
 
     /**
@@ -136,6 +136,6 @@ class CustomerController extends Controller
     {
         $customer = Customer::find($id);
         $customer->delete();
-        return redirect()->route('slide.index')->with('success','ລຶບຂໍ້ມູນສຳເລັດ!');
+        return redirect()->route('customer_logo.index')->with('success','ລຶບຂໍ້ມູນສຳເລັດ!');
     }
 }

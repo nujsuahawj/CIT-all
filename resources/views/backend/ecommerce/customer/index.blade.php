@@ -23,7 +23,7 @@
             <div class="col-12">
               <div class="card">
                 <div class="card-header">
-                    <a href="{{route('customer.create')}}" class="btn btn-primary btn-sm"><i class="fas fa-add"></i>{{__('lang.add')}}</a>
+                    <a href="{{route('customer_logo.create')}}" class="btn btn-primary btn-sm"><i class="fas fa-add"></i>{{__('lang.add')}}</a>
                 </div>
                 <div class="card-body">
                   <table id="example1" class="table table-bordered table-striped">
@@ -60,10 +60,10 @@
                         @endif
                       </td>
                       <td style="text-align: center">
-                        <form action=" {{ route('customer.destroy', $item->id) }} " method="POST">
+                        <form action=" {{ route('customer_logo.destroy', $item->id) }} " method="POST">
                           @csrf
                           @method('DELETE')
-                            <a href="{{ route('customer.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                            <a href="{{ route('customer_logo.edit', $item->id) }}" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
                             <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('ທ່ານຕ້ອງການລຶບຂໍ້ມູນນີ້ ຫຼື ບໍ?')"><i class="fas fa-trash"></i></button>
                         </form>
                       </td>

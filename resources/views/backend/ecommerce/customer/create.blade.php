@@ -33,7 +33,7 @@
               </div>
             </div>
 
-            <form method="POST" action="{{route('customer.store')}}" enctype="multipart/form-data">
+            <form method="POST" action="{{route('customer_logo.store')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
                   
@@ -95,7 +95,7 @@
                 </div>
                 <div class="card-footer">
                     <button type="submit" class="btn btn-primary">{{__('lang.save')}}</button>
-                    <a class="btn btn-warning" href="{{route('customer.index')}}" >{{__('lang.back')}}</a>
+                    <a class="btn btn-warning" href="{{route('customer_logo.index')}}" >{{__('lang.back')}}</a>
                 </div>
             </form>
             

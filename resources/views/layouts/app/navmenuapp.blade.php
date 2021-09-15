@@ -33,7 +33,7 @@
                   <li><a href="{{route('service.index')}}" class="dropdown-item">{{__('lang.service')}}</a></li>
                   <li><a href="{{route('solutions.index')}}" class="dropdown-item">{{__('blog.solutions')}}</a></li>
                   <li><a href="{{route('solution_type.index')}}" class="dropdown-item">{{__('blog.solution_type')}}</a></li>
-                  <li><a href="{{route('customer.index')}}" class="dropdown-item">{{__('lang.customer')}}</a></li>
+                  <li><a href="{{route('customer_logo.index')}}" class="dropdown-item">{{__('lang.customer')}}</a></li>
                 </ul>
               </li>
               
