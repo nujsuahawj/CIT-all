@@ -10,6 +10,8 @@ class Product extends Model
     use HasFactory;
 
     protected $connection = 'mysql2';
+
+    protected $table = 'products';
     
     protected $fillable = ['code','name','extra_name','father_product_id','price','import_price','import_price_calc',
     'price_online','image','vat','note','des','long_des','color','size','thumb','link','trash','min_reserve','type','catalog_id','is_like','unit_name'];

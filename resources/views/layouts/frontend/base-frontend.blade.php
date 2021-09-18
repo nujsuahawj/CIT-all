@@ -36,11 +36,22 @@
     <!-- Toastr -->
     <link rel="stylesheet" href="{{asset('admin/plugins/toastr/toastr.min.css')}}">
 
+    <style>
+        nav svg{
+          height: 20px;
+        }
+    
+        @font-face{
+          font-family: BoonHome;
+          src: url('{{asset('fonts/boonhome.otf')}}');
+        }
+      </style>
+
     @livewireStyles
 
 </head>
 
-<body>
+<body style="font-family: 'BoonHome'">
     <!-- Topbar Start -->
     <div class="container-fluid">
         <div class="row bg-secondary py-1 px-xl-5">
