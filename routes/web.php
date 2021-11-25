@@ -32,12 +32,9 @@ use App\Http\Controllers\Backend\Ecommerce\CatalogController;
 use App\Http\Controllers\Backend\Ecommerce\SlideController;
 use App\Http\Controllers\Backend\Ecommerce\ServiceController;
 //livewire
-    //Orders
-       use App\Http\livewire\Backend\OrderComponent;
-    //end
-    //Order
-   use App\Http\livewire\Backend\CustomerComponent;
-    //end Order
+ use App\Http\livewire\Backend\Order\OrderComponent;  
+ use App\Http\livewire\Backend\Customer\CustomerComponent; 
+  //end
 /*
 Route::get('/', function () {
     return view('backend.login');
@@ -131,14 +128,10 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::resource('/customer_logo', App\Http\Controllers\Backend\Ecommerce\CustomerController::class);
     Route::resource('/solutions', App\Http\Controllers\Backend\Ecommerce\SolutionController::class);
     Route::resource('/solution_type', App\Http\Controllers\Backend\Ecommerce\SolutionTypeController::class);
-
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
-    //Order
-    Route::get('/orders', OrderComponent::class)->name('admin.order');
-    //end Order
-    //Customers
-    Route::get('/admincustomers', CustomerComponent::class)->name('admin.customer');
-    //end Customers
+    // livewire
+     Route::get('/orders', OrderComponent::class)->name('admin.order');
+     Route::get('/admincustomer', CustomerComponent::class)->name('admin.customer');
 });
 
 

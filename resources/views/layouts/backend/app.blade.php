@@ -59,7 +59,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <div class="wrapper">
 
   <!-- Navbar -->
-  @livewire('backend.layouts.navmenuapp')
+  @include('layouts.backend.navmenuapp')
   <!-- /.navbar -->
 
   <!-- Content Wrapper. Contains page content -->
