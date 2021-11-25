@@ -46,11 +46,8 @@
           src: url('{{asset('fonts/boonhome.otf')}}');
         }
       </style>
-
     @livewireStyles
-
 </head>
-
 <body style="font-family: 'BoonHome'">
     <!-- Topbar Start -->
     <div class="container-fluid">

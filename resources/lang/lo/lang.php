@@ -325,6 +325,8 @@ return [
 
     ///Update
     'modules'=>'ໂມດູນ',
+    'module_order'=>'ໂມດູນການສັ່ງຊື້',
+    'module_customer'=>'ໂມດູນຄວບຄຸມລູກຄ້າ',
     'module_website'=>'ໂມດູນເວັບໄຊ',
     'module_email'=>'ໂມດູນອີເມວ',
     'module_document'=>'ໂມດູນເອກະສານ',

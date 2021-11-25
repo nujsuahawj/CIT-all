@@ -4,11 +4,9 @@
         <img src="{{asset('images/logo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <!--<span class="brand-text font-weight-light">{{__('lang.title')}}</span>-->
       </a>
-
       <!-- Left navbar links -->
       <div class="collapse navbar-collapse order-3" id="navbarCollapse">
         <ul class="navbar-nav">
-
           <!--Modules-->
           <li class="nav-item dropdown">
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true"
@@ -174,12 +172,9 @@
             </li>
           </ul>
         </li>
-
       </ul>
-
       <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      
     </div>
   </nav>

@@ -1,5 +1,4 @@
-@extends('layouts.app.app')
-@section('content')
+
 <section>
     <div class="col-md-12 text-center"><br>
         <p><h4>{{__('lang.title')}} | {{__('lang.dashboard')}}</h4></p>
@@ -7,13 +6,13 @@
             <!--<span class="badge bg-success">300</span>-->
             <i class="fas fa-envelope"></i> <h6>{{__('lang.module_email')}}</h6>
         </a>
-        <a class="btn btn-app bg-info" href="{{route('admin.order')}}">
+        <a class="btn btn-app bg-primary" href="{{route('admin.order'}}" target="_blank">
             <!--<span class="badge bg-success">300</span>-->
-            <i class="fas fa-globe"></i> <h6>ໂມດູນການສັ່ງຊື້</h6>
+            <i class="fas fa-envelope"></i> <h6>{{__('lang.module_order')}}</h6>
         </a>
-        <a class="btn btn-app bg-warning" href="{{route('admin.customer')}}">
+        <a class="btn btn-app bg-primary" href="{{route('admin.customer'}}" target="_blank">
             <!--<span class="badge bg-success">300</span>-->
-            <i class="fas fa-file"></i> <h6>ໂມດູນຄວບຄຸ້ມລູກຄ້າ</h6>
+            <i class="fas fa-envelope"></i> <h6>{{__('lang.module_customer')}}</h6>
         </a>
         <a class="btn btn-app bg-info" href="">
             <!--<span class="badge bg-success">300</span>-->
@@ -45,4 +44,3 @@
         </a>
     </div>
 </section>
-@endsection

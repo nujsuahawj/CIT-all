@@ -31,7 +31,13 @@ use App\Http\Controllers\Backend\Ecommerce\ProductController;
 use App\Http\Controllers\Backend\Ecommerce\CatalogController;
 use App\Http\Controllers\Backend\Ecommerce\SlideController;
 use App\Http\Controllers\Backend\Ecommerce\ServiceController;
-
+//livewire
+    //Orders
+       use App\Http\livewire\Backend\OrderComponent;
+    //end
+    //Order
+   use App\Http\livewire\Backend\CustomerComponent;
+    //end Order
 /*
 Route::get('/', function () {
     return view('backend.login');
@@ -82,7 +88,6 @@ Route::group(['middleware'=>'adminLogin'],function()
     //Backend
     Route::get('/module', [App\Http\Controllers\Backend\ModuleController::class,'index'])->name('module.index');
     Route::resource('/dashboard', DashboardController::class);
-
     Route::resource('/depart', DepartController::class);
     Route::resource('/province', ProvinceController::class);
     Route::resource('/district', DistrictController::class);
@@ -128,7 +133,12 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::resource('/solution_type', App\Http\Controllers\Backend\Ecommerce\SolutionTypeController::class);
 
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
-
+    //Order
+    Route::get('/orders', OrderComponent::class)->name('admin.order');
+    //end Order
+    //Customers
+    Route::get('/admincustomers', CustomerComponent::class)->name('admin.customer');
+    //end Customers
 });
 
 

@@ -30,7 +30,6 @@ class DashboardController extends Controller
         $user_count = User::where('del',0)->count();
         return view('backend.dashboard', compact('im_count','ex_count','local_count','all_emp_count','woman_emp_count','product_count','user_count'));
     }
-
     /**
      * Show the form for creating a new resource.
      *

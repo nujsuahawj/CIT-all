@@ -20,8 +20,9 @@
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
 
               <li><a href="https://mail.hostinger.com/" target="_blank" class="dropdown-item">{{__('lang.module_email')}}</a></li>
-              <li><a href="{{route('admin.order')}}" target="_blank" class="dropdown-item">ໂມດູນການສັ່ງຊື້</a></li>
-              <li><a href="{{route('admin.customer')}}" target="_blank" class="dropdown-item">ໂມດູນຄວບຄຸ້ມລູກຄ້າ</a></li>
+              <li><a href="{{route('admin.order')}}" target="_blank" class="dropdown-item">{{__('lang.module_order')}}</a></li>
+              <li><a href="{{route('admin.customer')}}" target="_blank" class="dropdown-item">{{__('lang.module_customer')}}</a></li>
+
               <!-- Module Website-->
               <li class="dropdown-submenu dropdown-hover">
                 <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">{{__('lang.module_website')}}</a>

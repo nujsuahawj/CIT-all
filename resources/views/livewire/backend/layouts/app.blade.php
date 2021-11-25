@@ -7,7 +7,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{__('blog.title_website')}} | {{__('lang.dashboard')}}</title>
+  <meta name="csrf-token" content="{{ csrf_token() }}">
+
+  <title>{{__('lang.title')}} | {{__('lang.dashboard')}}</title>
   <link rel="icon" type="image/png" href="{{asset('images/logo.png')}}"/>
 
   <!-- Google Font: Source Sans Pro -->
@@ -20,9 +22,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('admin/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/plugins/datatables-responsive/css/responsive.bootstrap4.min.css')}}">
   <link rel="stylesheet" href="{{asset('admin/plugins/datatables-buttons/css/buttons.bootstrap4.min.css')}}">
+  
+  <!--File Manager-->
+  <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
 
-  <!-- summernote -->
+  <!-- summernote
   <link rel="stylesheet" href="{{asset('admin/plugins/summernote/summernote-bs4.min.css')}}">
+  -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.css" rel="stylesheet">
+  <!-- Bootstrap CSS 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">-->
 
   <!-- Toastr -->
   <link rel="stylesheet" href="{{asset('admin/plugins/toastr/toastr.min.css')}}">
@@ -33,28 +42,30 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="{{asset('admin/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
 
   <link rel="stylesheet" href="{{asset('admin/dist/css/adminlte.min.css')}}">
-  <link href="{{asset('css/sidebars.css')}}" rel="stylesheet">
 
   <style>
     nav svg{
       height: 20px;
     }
+
+    @font-face{
+      font-family: Phetsarath OT;
+      src: url('{{asset('fonts/PhetsarathOT.ttf')}}');
+    }
   </style>
-
   @livewireStyles
-
 </head>
-<body class="hold-transition layout-top-nav">
+<body class="hold-transition layout-top-nav" style="font-family: 'Phetsarath OT'">
 <div class="wrapper">
 
   <!-- Navbar -->
-  @include('layouts.livwire.navmenu')
+  @livewire('backend.layouts.navmenuapp')
   <!-- /.navbar -->
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     
-    {{ $slot }}
+    {{$slot}}
 
   </div>
   <!-- /.content-wrapper -->
@@ -74,7 +85,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Default to the left -->
     <strong>Copyright &copy; 2009 - @php
         echo date('Y')
-    @endphp <a href="https://laovm.com" target="_blank">{{__('lang.title')}}</a></strong>
+    @endphp <a href="https://citgroup.la" target="_blank">{{__('lang.title')}}</a>.</strong>
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -107,31 +118,43 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{asset('admin/plugins/raphael/raphael.min.js')}}"></script>
 <script src="{{asset('admin/plugins/jquery-mapael/jquery.mapael.min.js')}}"></script>
 <script src="{{asset('admin/plugins/jquery-mapael/maps/usa_states.min.js')}}"></script>
+
+<!--File manager
+<script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote-bs4.js"></script>
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 <!-- Summernote -->
 <script src="{{asset('admin/plugins/summernote/summernote-bs4.min.js')}}"></script>
+
 <!-- Select2 -->
 <script src="{{asset('admin/plugins/select2/js/select2.full.min.js')}}"></script>
 
 <!-- Toastr -->
 <script src="{{asset('admin/plugins/toastr/toastr.min.js')}}"></script>
+<!-- Bootstrap Switch -->
+<script src="{{asset('admin/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
 
 <!-- AdminLTE App -->
 <script src="{{asset('admin/dist/js/adminlte.min.js')}}"></script>
-<script src="{{asset('js/sidebars.js')}}"></script>
 <script src="{{asset('js/money.format.js')}}"></script>
-<!--<script src="{{asset("ckeditor/ckeditor.js")}}"></script>-->
-<script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
 
-@livewireScripts
 
 <script>
   $(function () {
 
     // Summernote
-    $('#summernote').summernote()
+    //$('.summernote').summernote()
 
     $('.select2').select2()
 
+    $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'));
+    })
 
     //Initialize Select2 Elements
     $('.select2bs4').select2({
@@ -154,11 +177,59 @@ scratch. This page gets rid of all links and provides the needed markup only.
     });
   });
 </script>
+
+<script type="text/javascript">
+  @if(Session::has('success'))
+      toastr.options.positionClass = 'toast-bottom-right';
+      toastr.success("{{Session::get('success') }}")
+  @endif
+</script>
+
+<!--
 <script>
   window.livewire.on('alert', param => {
         toastr[param['type']](param['message'],param['type']);
   });
 </script>
-@stack('scripts')
+-->
+
+<script>
+  $(document).ready(function(){
+    // File manager button (image icon)
+    const FMButton = function(context) {
+      const ui = $.summernote.ui;
+      const button = ui.button({
+        contents: '<i class="note-icon-picture"></i> ',
+        tooltip: 'File Manager',
+        click: function() {
+          window.open('/file-manager/summernote', 'fm', 'width=1024,height=800');
+        }
+      });
+      return button.render();
+    };
+    $('.summernote').summernote({
+      toolbar: [
+        // [groupName, [list of button]]
+        ['style', ['bold', 'italic', 'underline', 'clear']],
+        ['font', ['strikethrough', 'superscript', 'subscript']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['insert', ['link', 'picture', 'video']],
+        ['fm-button', ['fm']],
+        ['view', ['fullscreen', 'codeview', 'help']]
+      ],
+      buttons: {
+        fm: FMButton
+      }
+    });
+  });
+  // set file link
+  function fmSetLink(url) {
+    $('.summernote').summernote('insertImage', url);
+  }
+</script>
+@livewireScripts
 </body>
 </html>

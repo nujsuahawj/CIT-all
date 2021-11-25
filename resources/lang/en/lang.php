@@ -324,6 +324,8 @@ return [
 
     ///Update
     'modules'=>'Modules',
+    'module_order'=>'Orders',
+    'module_customer'=>'Customers',
     'module_website'=>'Website',
     'module_email'=>'Email',
     'module_document'=>'Documents',

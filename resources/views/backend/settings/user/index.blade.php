@@ -49,7 +49,11 @@
                       <td>{{$u->name}}</td>
                       <td>{{$u->phone}}</td>
                       <td>{{$u->email}}</td>
-                      <td>{{$u->empname->firstname}} {{$u->empname->lastname}}</td>
+                      <td>
+                        @if($u->emp_id > 0)
+                        {{$u->empname->firstname}} {{$u->empname->lastname}}
+                        @endif
+                      </td>
                       <td style="text-align: center">{{$u->rolename->name}}</td>
                       <td>
                         <form action=" {{ route('user.destroy', $u->id) }} " method="POST">

@@ -21,7 +21,7 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{{asset('backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css')}}">
   <link rel="stylesheet" href="{{asset('backend/dist/css/adminlte.min.css')}}">
-  <link rel="stylesheet" href="{{asset("css/toastr.min.css")}}">
+  <link rel="stylesheet" href="{{asset('css/toastr.min.css')}}">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">

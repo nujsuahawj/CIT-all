@@ -26,7 +26,7 @@ class BranchController extends Controller
      */
     public function create()
     {
-        return view('backend.account.branch.create');
+        return view('backend.account.branch.create')->layouts('livewire.backend.layouts.app');
     }
 
     /**
