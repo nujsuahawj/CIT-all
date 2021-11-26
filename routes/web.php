@@ -32,8 +32,15 @@ use App\Http\Controllers\Backend\Ecommerce\CatalogController;
 use App\Http\Controllers\Backend\Ecommerce\SlideController;
 use App\Http\Controllers\Backend\Ecommerce\ServiceController;
 //livewire
- use App\Http\livewire\Backend\Order\OrderComponent;  
+ use App\Http\livewire\Backend\Order\OrderComponent; 
+//  by jack sainther 
  use App\Http\livewire\Backend\Customer\CustomerComponent; 
+ use App\Http\livewire\Backend\Customer\CreateComponent; 
+ use App\Http\livewire\Backend\Customer\EditComponent; 
+ use App\Http\livewire\Backend\Customer\DetialComponent;
+ 
+ 
+ 
   //end
 /*
 Route::get('/', function () {
@@ -131,7 +138,11 @@ Route::group(['middleware'=>'adminLogin'],function()
     Route::get('/logout',[LoginController::class,'logout'])->name('logout');
     // livewire
      Route::get('/orders', OrderComponent::class)->name('admin.order');
+    //  by jack sainther
      Route::get('/admincustomer', CustomerComponent::class)->name('admin.customer');
+     Route::get('/admincustomer/create', CreateComponent::class)->name('admin.createcustomer');
+     Route::get('/admincustomer/edit', EditComponent::class)->name('admin.editcustomer');
+     Route::get('/admincustomer/detail', DetialComponent::class)->name('admin.detailcustomer');
 });
 
 
