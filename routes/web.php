@@ -140,9 +140,6 @@ Route::group(['middleware'=>'adminLogin'],function()
      Route::get('/orders', OrderComponent::class)->name('admin.order');
     //  by jack sainther
      Route::get('/admincustomer', CustomerComponent::class)->name('admin.customer');
-     Route::get('/admincustomer/create', CreateComponent::class)->name('admin.createcustomer');
-     Route::get('/admincustomer/edit', EditComponent::class)->name('admin.editcustomer');
-     Route::get('/admincustomer/detail', DetialComponent::class)->name('admin.detailcustomer');
 });
 
 
