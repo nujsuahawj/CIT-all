@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Backend\Customer;
 use App\Models\CustomerTransition;
+use App\Models\Product;
+use App\Models\Customer;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -17,8 +19,11 @@ class CustomerComponent extends Component
     use WithPagination;
     public function render()
     {
-        $customer_transition =CustomerTransition::orderBy('id', 'DESC')->paginate(5);
-        return view('livewire.backend.customer.customer-component', ['customer_transition'=>$customer_transition])->layout('layouts.backend.app');
+        $products =Product::orderBy('id', 'DESC')->get();
+        $customers =Customer::orderBy('id', 'DESC')->get();
+        $customer_transition =CustomerTransition::orderBy('id', 'DESC')->get();
+        // $customer_transition =CustomerTransition::orderBy('id', 'DESC')->paginate(5);
+        return view('livewire.backend.customer.customer-component', ['customer_transition'=>$customer_transition,'products'=>$products,'customers'=>$customers])->layout('layouts.backend.app');
     }
     public function showFrom()
     {

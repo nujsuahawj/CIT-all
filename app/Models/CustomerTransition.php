@@ -18,4 +18,6 @@ class CustomerTransition extends Model
         'status',
         'picture',
     ];
+    
+    
 }
