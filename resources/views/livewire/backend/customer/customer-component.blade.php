@@ -36,30 +36,28 @@
                      </tr>
                     </thead>
                     <tbody>
-
+                    @forelse($customer_transition as $ct)
                     <tr>
-                      <td width=5% style="text-align: center">1</td>
-                      <td>
-                          <a href="#">a</a>
-                      </td>
-                      <td>camera</td>
-                      <td>29</td>
+                      <td width=5% style="text-align: center">{{$ct->id}}</td>
+                      <td>{{$ct->customer_id}}</td>
+                      <td>{{$ct->product_id}}</td>
+                      <td>{{$ct->note}}</td>
                       <td style="text-align: center">
                        
-                          <label class="text-success">active</label>
+                          <label class="text-success">{{$ct->status}}</label>
                        
                       </td>
                       <td>
-                        <form action="#" method="POST">
 
-                          <a href="" class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></a>
+                          <button wire:click='edit({{$ct->id}})' class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></button>
                           <a href="" class="btn btn-default btn-sm"><i class="fas fa-eye"></i></a>
-                          <button type="submit" class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></button>
+                          <button wire:click='delete({{$ct->id}})' onclick="return confirm('ທ່ານຕ້ອງການລຶບຂໍ້ມູນນີ້ ຫຼື ບໍ?')"  class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></button>
 
-                        </form>
                       </td>
                     </tr>
-
+                    @empty
+                    <h1>Record not found</h1>
+                    @endforelse
                     </tbody>
                   </table>
                 </div>
@@ -119,8 +117,7 @@
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="picture">picture</label>
-                          <input type="file" class="form-control" wire:model='picture' name="picture" id="picture">
-                          <span class="text-danger"> @error('picture'){{$message}}  @enderror  </span>
+                          <input type="file" class="form-control" wire:model='picture' name="picture" id="">
                         </div>
                     </div>
                 </div>
@@ -162,7 +159,7 @@
   <div class="content">
     <div class="col-lg-12">
       <div class="card card-default">
-        <form action="" enctype="multipart/form-data"> 
+        <form action="" wire:submit.prevent='update({{$ids}})' enctype="multipart/form-data"> 
           <div class="card-body">
                     
             <div class="row">
@@ -172,26 +169,26 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>customer id</label>
-                      <select class="form-control select2" name="customer_id" style="width: 100%;">                     
+                      <select class="form-control select2" wire:model="ed_customer_id" name="ed_customer_id" style="width: 100%;">                     
                                 
                         <option value="1">select data</option>
                         <option value="2">2</option>
                         <option value="3">3</option>
                                 
                       </select>
-                      @error ('customer_id') <span style="color: red;">{{$message}}</span>@enderror
+                      @error ('ed_customer_id') <span style="color: red;">{{$message}}</span>@enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label>product id</label>
-                      <select class="form-control select2" name="product_id" style="width: 100%;">                     
+                      <select class="form-control select2" wire:model="ed_product_id" name="ed_product_id" style="width: 100%;">                     
                                 
                         <option value="a">select data</option>
                         <option value="b">b</option>
                         <option value="c">c</option>
                       </select>
-                      @error ('product_id') <span style="color: red;">{{$message}}</span>@enderror
+                      @error ('ed_product_id') <span style="color: red;">{{$message}}</span>@enderror
                     </div>
                   </div>
                 </div>
@@ -201,14 +198,14 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="note">note</label>
-                        <input type="text" class="form-control" name="note" placeholder="note">
-                          @error ('note') <span style="color: red;">{{$message}}</span>@enderror
+                        <input type="text" class="form-control" wire:model="ed_note" name="ed_note" placeholder="note">
+                          @error ('ed_note') <span style="color: red;">{{$message}}</span>@enderror
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="form-group">
                         <label for="picture">picture</label>
-                          <input type="file" class="form-control" name="picture" id="picture">
+                          <input type="file" class="form-control" wire:model="ed_picture" name="ed_picture" id="ed_picture">
                           <!-- @error ('picture') <span style="color: red;">{{$message}}</span>@enderror -->
                         </div>
                     </div>
@@ -220,15 +217,15 @@
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="start_date">start date</label>
-                        <input type="date" class="form-control" name="start_date" placeholder="start date">
-                        @error ('start_date') <span style="color: red;">{{$message}}</span>@enderror
+                        <input type="date" class="form-control" wire:model="ed_start_date" name="ed_start_date" placeholder="start date">
+                        @error ('ed_start_date') <span style="color: red;">{{$message}}</span>@enderror
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
                       <label for="end_date">end date</label>
-                        <input type="date" class="form-control" name="end_date" placeholder="end date">
-                        @error ('end_date') <span style="color: red;">{{$message}}</span>@enderror
+                        <input type="date" class="form-control" wire:model="ed_end_date" name="ed_end_date" placeholder="end date">
+                        @error ('ed_end_date') <span style="color: red;">{{$message}}</span>@enderror
                     </div>
                   </div>
                 </div>
@@ -239,16 +236,17 @@
               <div class="col-md-3">
                   <div class="form-group">
                       <label for="file">status</label>
-                      <select name="status" class="form-control">
-                        <option value="1" >active</option>
-                        <option value="0" >inactive</option>
+                      <select wire:model="ed_status" name="ed_status" class="form-control">
+                        <option value="1" >1</option>
+                        <option value="0" >0</option>
                       </select>
+                      @error ('ed_status') <span style="color: red;">{{$message}}</span>@enderror
                   </div>
               </div>
             </div>
             <div class="card-footer">
-              <button wire:click="store()" class="btn btn-primary">save</button>
-              <a class="btn btn-warning" href="#" >backup</a>
+              <button type="submit" class="btn btn-primary">save</button>
+              <a class="btn btn-warning" href="{{route('admin.customer')}}" >backup</a>
             </div>
           </div>
         </form>
