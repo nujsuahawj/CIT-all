@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
 class Customer extends Model
 {
     use HasFactory;
-    protected $connection = 'mysql2';
-    protected $table = 'customers';
+    // protected $connection = 'mysql2';
+    // protected $table = 'customers';
 
     protected $fillable = ['image','name_la','name_en','customer_type_id'];
 

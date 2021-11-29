@@ -84,7 +84,7 @@
                         <i class="fas fa-times"></i>
                       </button>
                     </div>
-              </div>
+            </div>
             <form action="" wire:submit.prevent='create' enctype="multipart/form-data"> 
               <div class="card-body">
                         
@@ -135,6 +135,7 @@
                           <div class="form-group">
                             <label for="picture">picture</label>
                               <input type="file" class="form-control" wire:model='picture' name="picture" id="">
+
                             </div>
                         </div>
                     </div>
@@ -175,6 +176,17 @@
       <div class="content">
         <div class="col-lg-12">
           <div class="card card-default">
+            <div class="card-header">
+                    <h3 class="card-title"><h4 class="card-title">add news</h4></h3>
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+            </div>
             <form action="" wire:submit.prevent='update({{$ids}})' enctype="multipart/form-data"> 
               <div class="card-body">
                         
@@ -222,8 +234,8 @@
                         <div class="col-md-6">
                           <div class="form-group">
                             <label for="picture">picture</label>
-                              <input type="file" class="form-control" wire:model="ed_picture" name="ed_picture" id="ed_picture">
-                              <!-- @error ('picture') <span style="color: red;">{{$message}}</span>@enderror -->
+                                <input type="file" class="form-control" wire:model="ed_picture" name="ed_picture" id="ed_picture">
+                                
                             </div>
                         </div>
                     </div>

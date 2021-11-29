@@ -6,6 +6,8 @@ use App\Models\Product;
 use App\Models\Customer;
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
+use DB;
 
 class CustomerComponent extends Component
 {
@@ -13,14 +15,17 @@ class CustomerComponent extends Component
     public $createData=false;
     public $updateData=false;
 
-    public $customer_id, $product_id, $note, $start_date, $end_date, $status=1, $picture=000;
+    public $customer_id, $product_id, $note, $start_date, $end_date, $status=1, $picture;
     public $ids, $ed_customer_id, $ed_product_id, $ed_note, $ed_start_date, $ed_end_date, $ed_status, $ed_picture=000;
 
+    use WithFileUploads;
     use WithPagination;
     public function render()
     {
-        $products =Product::orderBy('id', 'DESC')->get();
-        $customers =Customer::orderBy('id', 'DESC')->get();
+        $customers = DB::connection('mysql2')->table('customers')->get();
+        $products = DB::connection('mysql2')->table('products')->get();
+        // $products =Product::orderBy('id', 'DESC')->get();
+        // $customers =Customer::orderBy('id', 'DESC')->get();
         $customer_transition =CustomerTransition::orderBy('id', 'DESC')->get();
         // $customer_transition =CustomerTransition::orderBy('id', 'DESC')->paginate(5);
         return view('livewire.backend.customer.customer-component', ['customer_transition'=>$customer_transition,'products'=>$products,'customers'=>$customers])->layout('layouts.backend.app');
@@ -58,7 +63,7 @@ class CustomerComponent extends Component
             'note'=>'required',
             'start_date'=>'required',
             'end_date'=>'required',
-            'status'=>'required',
+            'status'=>'required', 
         ]);
         $customer_transition->customer_id=$this->customer_id;
         $customer_transition->product_id=$this->product_id;
@@ -66,7 +71,11 @@ class CustomerComponent extends Component
         $customer_transition->start_date=$this->start_date;
         $customer_transition->end_date=$this->end_date;
         $customer_transition->status=$this->status;
-        $customer_transition->picture=$this->picture; 
+        $customer_transition->picture=$this->picture->hashName();
+        
+        if(!empty($this->picture)){
+            $this->picture->store('livewire-tmp');
+        }
 
         $result = $customer_transition->save();
         $this ->resetFied();
@@ -102,7 +111,6 @@ class CustomerComponent extends Component
             'ed_note' => 'required',
             'ed_start_date' => 'required',
             'ed_end_date' => 'required',
-            'ed_status' => 'required'
         ]);
 
         $customer_transition->customer_id = $this->ed_customer_id;
@@ -111,7 +119,12 @@ class CustomerComponent extends Component
         $customer_transition->start_date = $this->ed_start_date;
         $customer_transition->end_date = $this->ed_end_date;
         $customer_transition->status = $this->ed_status;
+        $customer_transition->picture= $this->ed_picture->hashName();
         
+        if(!empty($this->picture)){
+            $this->picture->store('livewire-tmp');
+        }
+
         $result = $customer_transition->save();
         $this ->resetFied();
         $this->selectData = true;
