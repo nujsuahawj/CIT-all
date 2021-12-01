@@ -137,6 +137,10 @@
             <i class="fas fa-envelope mr-2"></i> 10 new Orders
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
+          <a href="/admincustomer" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 3 customer
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
           <a href="#" class="dropdown-item">
             <i class="fas fa-envelope mr-2"></i> 4 new messages
             <span class="float-right text-muted text-sm">3 mins</span>

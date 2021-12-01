@@ -131,8 +131,32 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'customer_id' => [
+            'required'=>'ກະລຸນາເລືອກຊື່ລູກຄ້າ',
+        ],
+        'product_id' => [
+            'required'=>'ກະລຸນາເລືອກຊື່ສິນຄ້າ',
+        ],
+        'note' => [
+            'required'=>'ກະລຸນາປ້ອນໝາຍເຫດ',
+        ],
+        'start_date' => [
+            'required'=>'ກະລຸນາເລືອກວັນທີເລີ່ມຕົ້ນ',
+        ],
+        'end_date' => [
+            'required'=>'ກະລຸນາເລືອກວັນທີ່ສິ້ນສຸດ',
+        ],
+        'status' => [
+            'required'=>'ກະລຸນາເລືອກສະຖານະ',
+        ],
+        'picture' => [
+            'image'=>'ກະລຸນາເລືອກຮູບ',
+        ],
+        'ed_picture' => [
+            'image'=>'ກະລຸນາເລືອກຮູບ',
+        ],
+        'ed_note' => [
+            'required'=>'ກະລຸນາປ້ອນໝາຍເຫດ',
         ],
     ],
 

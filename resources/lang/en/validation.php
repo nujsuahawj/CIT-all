@@ -131,8 +131,32 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'customer_id' => [
+            'required'=>'plase choose the customer name',
+        ],
+        'product_id' => [
+            'required'=>'plase choose the product name',
+        ],
+        'note' => [
+            'required'=>'plase enter the note',
+        ],
+        'start_date' => [
+            'required'=>'plase select start date',
+        ],
+        'end_date' => [
+            'required'=>'plase select end date',
+        ],
+        'status' => [
+            'required'=>'plase select status',
+        ],
+        'picture' => [
+            'image'=>'plase choose the image',
+        ],
+        'ed_picture' => [
+            'image'=>'plase choose the image',
+        ],
+        'ed_note' => [
+            'required'=>'plase enter the note',
         ],
     ],
 

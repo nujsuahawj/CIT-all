@@ -66,7 +66,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <div class="content-wrapper">
     
     {{$slot}}
-
+    
   </div>
   <!-- /.content-wrapper -->
 
@@ -179,9 +179,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </script>
 
 <script type="text/javascript">
-  @if(Session::has('success'))
-      toastr.options.positionClass = 'toast-bottom-right';
-      toastr.success("{{Session::get('success') }}")
+  
+  @if (session()->has('message'))
+    toastr.options.positionClass = 'toast-bottom-right';
+    toastr.success("{{ session('message') }}")
+                            
+                        
   @endif
 </script>
 

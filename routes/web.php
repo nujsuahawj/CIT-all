@@ -35,9 +35,7 @@ use App\Http\Controllers\Backend\Ecommerce\ServiceController;
  use App\Http\livewire\Backend\Order\OrderComponent; 
 //  by jack sainther 
  use App\Http\livewire\Backend\Customer\CustomerComponent; 
- use App\Http\livewire\Backend\Customer\CreateComponent; 
- use App\Http\livewire\Backend\Customer\EditComponent; 
- use App\Http\livewire\Backend\Customer\DetialComponent;
+ use App\Http\livewire\Backend\Customer\ShowDetials; 
  
  
  

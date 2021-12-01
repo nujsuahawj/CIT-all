@@ -395,6 +395,9 @@ return [
     'printbill'=>'Print',
     'member_contact'=>'Member contact',
     'tree_history'=>'History',
+    'tojack'=>'To',
+    'wait'=>'Number of days remaining',
+    'days'=>'days',
 
     'employee_code'=>'Code',
     'first_and_lastname'=>'Fistname and lastname',
