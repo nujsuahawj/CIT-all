@@ -72,6 +72,8 @@ class CustomerComponent extends Component
             'status'=>'required', 
             'picture'=>'image',
         ]);
+
+        // dd($this->customer_id);
         $customer_transition->customer_id=$this->customer_id;
         $customer_transition->product_id=$this->product_id;
         $customer_transition->note=$this->note;
@@ -167,6 +169,7 @@ class CustomerComponent extends Component
         $this->showData  = true;
 
         $vct = CustomerTransition::findOrFail($id);
+        // dd($vct->product_id);
         $this->vid = $vct->id;
         $this->vcustomer_id = $vct->customer_id;
         $this->vproduct_id = $vct->product_id;
@@ -175,6 +178,7 @@ class CustomerComponent extends Component
         $this->vend_date = $vct->end_date;
         $this->vstatus = $vct->status;
         $this->vpicture = $vct->picture;
+        // dd($this->vpicture);
         return view('livewire.backend.customer.customer-component', compact('vct'));
     }
     

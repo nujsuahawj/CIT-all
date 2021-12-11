@@ -49,19 +49,12 @@
 
                           @forelse($customer_transition as $ct)
                           <tr>
-                            <!-- <td> -->
-                              <!-- @if (!empty($ct->picture)) -->
-                                    <!-- <img width="100px" src="{{ url('pictures/ct/'. $ct->picture) }}" /> -->
-                                <!-- @else
-                                    No featured image available!
-                                @endif -->
-                            <!-- </td> -->
                             <td width=5% style="text-align: center">{{$stt++}}</td>
                             <td style="text-align: center">{{$ct->customer_id}}</td>
                             <td style="text-align: center">{{$ct->product_id}}</td>
                               @php
                                 $d1= time();
-                                $d2= strtotime("2021-12-05");
+                                $d2= strtotime("{{$ct->end_date}}");
                                 $wai= $d2 - $d1;
                                 $nas = floor($wai/(60*60*24));
                               @endphp
@@ -79,7 +72,7 @@
 
                                 <button wire:click='edit({{$ct->id}})' class="btn btn-warning btn-sm"><i class="fas fa-pencil-alt"></i></button>
                                 <button wire:click='show({{$ct->id}})'  class="btn btn-default btn-sm"><i class="fas fa-eye"></i></button>
-                                <button wire:click='delete({{$ct->id}})' onclick="return confirm('ທ່ານຕ້ອງການລຶບຂໍ້ມູນນີ້ ຫຼື ບໍ?')"  class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></button>
+                                <button onclick="confirm('ທ່ານຕ້ອງການລຶບຂໍ້ມູນນີ້ ຫຼື ບໍ?') || event.stopImmediatePropagation()" wire:click='delete({{$ct->id}})'  class="btn btn-danger btn-sm" ><i class="fas fa-trash"></i></button>
 
                             </td>
                           </tr>
@@ -123,9 +116,9 @@
                       <div class="col-md-6">
                         <div class="row">
                           <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group" wire:ignore>
                               <label>{{__('lang.customername')}}</label>
-                              <select class="form-control select2" wire:model='customer_id' id="customer_id" style="width: 100%;">
+                              <select class="form-control" wire:model='customer_id' id="customer" style="width: 100%;">
                               <option value="">{{__('lang.select_customer')}}</option>                     
                               @forelse($customers as $cid)        
                               <option value="{{$cid->name}}">{{$cid->name}}</option>
@@ -138,9 +131,9 @@
                           </div>
                           
                             <div class="col-md-6">
-                              <div class="form-group">
+                              <div class="form-group" wire:ignore>
                                 <label>{{__('lang.productname')}}</label>
-                                <select class="form-control select2" wire:model='product_id' id="product_id"  style="width: 100%;">  
+                                <select class="form-control select2" wire:model='product_id' id="product"  style="width: 100%;">  
                                 <option value="">{{__('lang.select_product')}}</option>                   
                                 @forelse($products as $cid)        
                                 <option value="{{$cid->name}}">{{$cid->name}}</option>
@@ -204,13 +197,19 @@
         </div>
       </div>
       <script>
-                    $('.select2').select2()
-                    $("input[data-bootstrap-switch]").each(function(){
-                      $(this).bootstrapSwitch('state', $(this).prop('checked'));
-                    })
-                    $('.select2bs4').select2({
-                      theme: 'bootstrap4'
-                    })
+        $(document).ready(function() {
+        $('#customer').select2();
+        $('#customer').on('change', function(e) {
+          var data = $('#customer').select2("val");
+          @this.set('customer_id',data);
+        });
+
+        $('#product').select2();
+        $('#product').on('change', function(e) {
+          var data = $('#product').select2("val");
+          @this.set('product_id',data);
+        });
+      });
       </script>
       @endif
 
@@ -240,9 +239,9 @@
                       <div class="col-md-6">
                         <div class="row">
                           <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group" wire:ignore>
                               <label>{{__('lang.customername')}}</label>
-                              <select class="form-control select2" wire:model="ed_customer_id" id="ed_customer_id" style="width: 100%;">                     
+                              <select class="form-control select2" wire:model="ed_customer_id" id="customer" style="width: 100%;">                     
                                 @forelse($customers as $cid)        
                                 <option value="{{$cid->name}}">{{$cid->name}}</option>
                                   @empty
@@ -253,9 +252,9 @@
                             </div>
                           </div>
                           <div class="col-md-6">
-                            <div class="form-group">
+                            <div class="form-group" wire:ignore>
                               <label>{{__('lang.productname')}}</label>
-                              <select class="form-control select2" wire:model="ed_product_id" id="ed_product_id" style="width: 100%;">                     
+                              <select class="form-control select2" wire:model="ed_product_id" id="product" style="width: 100%;">                     
                               @forelse($products as $cid)        
                                 <option value="{{$cid->name}}">{{$cid->name}}</option>
                                   @empty
@@ -330,13 +329,19 @@
         </div>
       </div>
       <script>
-                    $('.select2').select2()
-                    $("input[data-bootstrap-switch]").each(function(){
-                      $(this).bootstrapSwitch('state', $(this).prop('checked'));
-                    })
-                    $('.select2bs4').select2({
-                      theme: 'bootstrap4'
-                    })
+        $(document).ready(function() {
+        $('#customer').select2();
+        $('#customer').on('change', function(e) {
+          var data = $('#customer').select2("val");
+          @this.set('ed_customer_id',data);
+        });
+
+        $('#product').select2();
+        $('#product').on('change', function(e) {
+          var data = $('#product').select2("val");
+          @this.set('ed_product_id',data);
+        });
+      });
       </script>
       @endif
 
@@ -350,8 +355,8 @@
                   <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
                           <h3 class="profile-username text-center">{{__('lang.picture')}} </h3>
-                          @if (!empty($vct->picture))
-                                    <img wire:model="vpicture" src="{{ url('pictures/ct/'. $vct->picture) }}" alt="" width="100%" height="500" style="text-align: center;"/>
+                          @if (!empty($vpicture))
+                                    <img src="{{asset('pictures/ct/'.$vpicture) }}" alt="" width="100%" height="450" style="text-align: center;"/>
                                 @else
                                     No featured image available!
                                 @endif
@@ -371,25 +376,25 @@
                             <strong><i class="fas fa-location-arrow mr-1"></i> {{__('lang.customername')}}</strong>
                            
                             <p class="text-muted" wire:model="vcustomer_id">
-                              Mr jack
+                              {{$vcustomer_id}}
                             </p>
                             
                             <hr>
 
                           <strong><i class="fas fa-location-arrow mr-1"></i> {{__('lang.productname')}}</strong>
-                          <p wire:model="vproduct_id" class="text-muted">
-                            camera
+                          <p class="text-muted">
+                              {{$vproduct_id}}
                           </p>
           
                           <hr>
           
                           <strong><i class="fas fa-clock mr-1"></i>{{__('lang.start_date')}} {{__('lang.tojack')}} {{__('lang.end_date')}}</strong>
-                          <p wire:model="vstart_date" class="text-muted"> 11/11/2021 - 11/11/2022 </p>
-          
+                          <p wire:model="vstart_date" class="text-muted"> {{date('d/m/Y',strtotime($vstart_date))}} - {{date('d/m/Y',strtotime($vend_date))}} </p>
+                            
                           <hr>
           
                           <strong><i class="far fa-file-alt mr-1"></i>{{__('lang.note')}}</strong>
-                          <p wire:model="note" class="text-muted">good verry</p>
+                          <p wire:model="note" class="text-muted">{{$vnote}}</p>
 
                           <hr>
                           <a href="{{route('admin.customer')}}" class="btn btn-warning"><b>{{__('lang.back')}}</b></a>
