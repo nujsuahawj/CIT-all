@@ -33,7 +33,6 @@
                         <table id="example1" class="table table-bordered table-striped">
                           <thead>
                           <tr style="text-align: center">
-                              <!-- <th>image</th> -->
                               <th>{{__('lang.no')}}</th>
                               <th>{{__('lang.customername')}}</th>
                               <th>{{__('lang.productname')}}</th>
@@ -54,18 +53,23 @@
                             <td style="text-align: center">{{$ct->product_id}}</td>
                               @php
                                 $d1= time();
-                                $d2= strtotime("{{$ct->end_date}}");
+                                $d2= strtotime($ct->end_date);
                                 $wai= $d2 - $d1;
-                                $nas = floor($wai/(60*60*24));
+                                $nas = floor($wai/86400);
                               @endphp
                             <td style="text-align: center">
-                              {{$nas}} {{__('lang.days')}}
+                            @if ($nas >= 1)
+                             {{$nas}} {{__('lang.days')}}
+                            @else
+                            {{__('lang.close_contract')}}
+                            @endif
+                              
                             </td>
                             <td style="text-align: center">
                             @if($ct->status == 1)
-                                <label class="text-success">active</label>
+                                <label class="text-success">{{__('lang.active')}}</label>
                               @else
-                                <label class="text-danger">inactive</label>
+                                <label class="text-danger">{{__('lang.inactive')}}</label>
                               @endif
                             </td>
                             <td style="text-align: center">
@@ -354,9 +358,9 @@
                 <div class="col-md-4">
                   <div class="card card-primary card-outline">
                         <div class="card-body box-profile">
-                          <h3 class="profile-username text-center">{{__('lang.picture')}} </h3>
+                          <h3 class="profile-username text-center">{{__('lang.picture_contract')}} </h3>
                           @if (!empty($vpicture))
-                                    <img src="{{asset('pictures/ct/'.$vpicture) }}" alt="" width="100%" height="450" style="text-align: center;"/>
+                                    <img src="{{asset('pictures/ct/'.$vpicture) }}" alt="" width="100%" height="500" style="text-align: center;"/>
                                 @else
                                     No featured image available!
                                 @endif
@@ -373,7 +377,7 @@
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
-                            <strong><i class="fas fa-location-arrow mr-1"></i> {{__('lang.customername')}}</strong>
+                            <strong><i class="fas fa-user"></i> {{__('lang.customername')}}</strong>
                            
                             <p class="text-muted" wire:model="vcustomer_id">
                               {{$vcustomer_id}}
@@ -381,7 +385,7 @@
                             
                             <hr>
 
-                          <strong><i class="fas fa-location-arrow mr-1"></i> {{__('lang.productname')}}</strong>
+                          <strong><i class="fab fa-product-hunt"></i> {{__('lang.productname')}}</strong>
                           <p class="text-muted">
                               {{$vproduct_id}}
                           </p>
