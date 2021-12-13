@@ -133,10 +133,6 @@
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">15 Notifications</span>
           <div class="dropdown-divider"></div>
-          <a href="/orders" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 10 new Orders
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
           @php
           use App\Models\CustomerTransition;
           $customer_transition =CustomerTransition::orderBy('id', 'DESC')->get();
@@ -160,16 +156,15 @@
 
              @endforeach
           <a href="/admincustomer" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i>{{$notif}} new customer
-            <span class="float-right text-muted text-sm">3 mins </span>
-              
+            @if($notif == 0)
+            <i class="fas fa-envelope mr-2"></i>{{$no}} new customer
+            @else
+            <i class="fas fa-envelope mr-2"></i>{{$notif}} new customer
+            @endif
+            <!-- <span class="float-right text-muted text-sm">3 mins</span> -->
           </a>
-          
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
+
+          <!-- <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <i class="fas fa-users mr-2"></i> 8 friend requests
             <span class="float-right text-muted text-sm">12 hours</span>
@@ -179,7 +174,7 @@
             <i class="fas fa-file mr-2"></i> 3 new reports
             <span class="float-right text-muted text-sm">2 days</span>
           </a>
-          <div class="dropdown-divider"></div>
+          <div class="dropdown-divider"></div> -->
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
         </div>
         </li>
