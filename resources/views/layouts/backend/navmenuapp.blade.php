@@ -137,10 +137,34 @@
             <i class="fas fa-envelope mr-2"></i> 10 new Orders
             <span class="float-right text-muted text-sm">3 mins</span>
           </a>
+          @php
+          use App\Models\CustomerTransition;
+          $customer_transition =CustomerTransition::orderBy('id', 'DESC')->get();
+          $notif = 0;
+          $no = 0;
+          @endphp
+
+          @forelse($customer_transition as $ct)
+                            @php
+                                
+                                $d1= time();
+                                $d2= strtotime($ct->end_date);
+                                $wai= $d2 - $d1;
+                                $nas = floor($wai/86400);
+                                if($nas < 0){
+                                  $notif++;
+                                }else{
+                                  $no;
+                                }
+                              @endphp
+
+             @endforeach
           <a href="/admincustomer" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 3 customer
-            <span class="float-right text-muted text-sm">3 mins</span>
+              <i class="fas fa-envelope mr-2"></i>{{$notif}} new customer
+            <span class="float-right text-muted text-sm">3 mins </span>
+              
           </a>
+          
           <a href="#" class="dropdown-item">
             <i class="fas fa-envelope mr-2"></i> 4 new messages
             <span class="float-right text-muted text-sm">3 mins</span>

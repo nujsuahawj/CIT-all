@@ -30,7 +30,7 @@ class CustomerComponent extends Component
         // $customers =Customer::orderBy('id', 'DESC')->get();
         $customer_transition =CustomerTransition::orderBy('id', 'DESC')->get();
         // $customer_transition =CustomerTransition::orderBy('id', 'DESC')->paginate(5);
-        return view('livewire.backend.customer.customer-component', ['customer_transition'=>$customer_transition,'products'=>$products,'customers'=>$customers])->layout('layouts.livewire.app');
+        return view('livewire.backend.customer.customer-component', ['customer_transition'=>$customer_transition,'products'=>$products,'customers'=>$customers])->layout('layouts.backend.app');
     }
     public function showFrom()
     {
