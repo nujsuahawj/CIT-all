@@ -70,20 +70,27 @@ class CustomerComponent extends Component
             'start_date'=>'required',
             'end_date'=>'required',
             'status'=>'required', 
-            'picture'=>'image',
         ]);
 
-        // dd($this->customer_id);
-        $customer_transition->customer_id=$this->customer_id;
-        $customer_transition->product_id=$this->product_id;
-        $customer_transition->note=$this->note;
-        $customer_transition->start_date=$this->start_date;
-        $customer_transition->end_date=$this->end_date;
-        $customer_transition->status=$this->status;
-        $customer_transition->picture=$this->picture->hashName();
+        
         
         if(!empty($this->picture)){
             $this->picture->store('pictures/ct');
+            // dd($this->customer_id);
+            $customer_transition->customer_id=$this->customer_id;
+            $customer_transition->product_id=$this->product_id;
+            $customer_transition->note=$this->note;
+            $customer_transition->start_date=$this->start_date;
+            $customer_transition->end_date=$this->end_date;
+            $customer_transition->status=$this->status;
+            $customer_transition->picture=$this->picture->hashName();
+        }else{
+            $customer_transition->customer_id=$this->customer_id;
+            $customer_transition->product_id=$this->product_id;
+            $customer_transition->note=$this->note;
+            $customer_transition->start_date=$this->start_date;
+            $customer_transition->end_date=$this->end_date;
+            $customer_transition->status=$this->status;
         }
 
         $result = $customer_transition->save();
@@ -110,7 +117,7 @@ class CustomerComponent extends Component
         $this->ed_start_date = $customer_transition->start_date;
         $this->ed_end_date = $customer_transition->end_date;
         $this->ed_status = $customer_transition->status;
-        $this->ed_picture = $customer_transition->picture;
+        // $this->ed_picture = $customer_transition->picture;
         
     }
 
@@ -125,21 +132,26 @@ class CustomerComponent extends Component
             'ed_start_date' => 'required',
             'ed_end_date' => 'required',
             'ed_status'=>'required',
-            'ed_picture' =>'image',
         ]);
-
-        $customer_transition->customer_id = $this->ed_customer_id;
-        $customer_transition->product_id = $this->ed_product_id;
-        $customer_transition->note = $this->ed_note;
-        $customer_transition->start_date = $this->ed_start_date;
-        $customer_transition->end_date = $this->ed_end_date;
-        $customer_transition->status = $this->ed_status;
-        $customer_transition->picture= $this->ed_picture->hashName();
-
         if(!empty($this->ed_picture)){
             $this->ed_picture->store('pictures/ct');
+
+            $customer_transition->customer_id = $this->ed_customer_id;
+            $customer_transition->product_id = $this->ed_product_id;
+            $customer_transition->note = $this->ed_note;
+            $customer_transition->start_date = $this->ed_start_date;
+            $customer_transition->end_date = $this->ed_end_date;
+            $customer_transition->status = $this->ed_status;
+            $customer_transition->picture= $this->ed_picture->hashName();
+        }else{
+            $customer_transition->customer_id = $this->ed_customer_id;
+            $customer_transition->product_id = $this->ed_product_id;
+            $customer_transition->note = $this->ed_note;
+            $customer_transition->start_date = $this->ed_start_date;
+            $customer_transition->end_date = $this->ed_end_date;
+            $customer_transition->status = $this->ed_status;
         }
-        
+            
 
         $result = $customer_transition->save();
         session()->flash('message', 'ອັບແດດລູຄ້າສຳແລັດແລ້ວ');

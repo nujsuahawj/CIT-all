@@ -16,7 +16,7 @@ return [
     'wait'=>'ຈຳນວນວັນທີ່ຍັງເຫຼືອໃນໃບສັນຍາ',
     'days'=>'ວັນ',
     'close_contract' =>'ໝົດສັນຍາແລ້ວ',
-    'picture_contract' => "ຮູບໃບສັນຍາ",
+    'picture_contract' => "ໃບສັນຍາ",
     'update'=>'ບັນທຶກ',
     'delete'=>'ລຶບຂໍ້ມູນ',
     'show'=>'ສະແດງ',

@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use View;
 use App\Models\Branch;
+use App\Models\CustomerTransition;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -28,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
         $branchs = Branch::where('id',1)->first();
-        View::share(compact('branchs'));
+        $customer_transition =CustomerTransition::orderBy('id', 'DESC')->get();
+        $notif = 0;
+        $no = 0;
+        View::share(compact('branchs', 'customer_transition','notif','no'));
+
     }
 }

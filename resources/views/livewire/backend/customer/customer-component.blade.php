@@ -360,9 +360,9 @@
                         <div class="card-body box-profile">
                           <h3 class="profile-username text-center">{{__('lang.picture_contract')}} </h3>
                           @if (!empty($vpicture))
-                                    <img src="{{asset('pictures/ct/'.$vpicture) }}" alt="" width="100%" height="500" style="text-align: center;"/>
+                                    <a href="{{url('pictures/ct/'.$vpicture)}}" target="_blank" class="btn btn-primary"><b>{{__('lang.viewfile')}}</b></a>
                                 @else
-                                    No featured image available!
+                                    No featured file available!
                                 @endif
                           
                         </div>

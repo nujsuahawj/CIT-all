@@ -399,7 +399,7 @@ return [
     'wait'=>'Number of days remaining',
     'days'=>'days',
     'close_contract' =>'close contract',
-    'picture_contract' => "picture_contract",
+    'picture_contract' => "contract",
 
     'employee_code'=>'Code',
     'first_and_lastname'=>'Fistname and lastname',

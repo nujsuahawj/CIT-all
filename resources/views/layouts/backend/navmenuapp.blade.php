@@ -128,17 +128,11 @@
         <li class="nav-item dropdown">
           <a class="nav-link" data-toggle="dropdown" href="#">
             <i class="far fa-bell"></i>
-            <span class="badge badge-warning navbar-badge">15</span>
+            <span class="badge badge-warning navbar-badge">12</span>
           </a>
           <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">15 Notifications</span>
           <div class="dropdown-divider"></div>
-          @php
-          use App\Models\CustomerTransition;
-          $customer_transition =CustomerTransition::orderBy('id', 'DESC')->get();
-          $notif = 0;
-          $no = 0;
-          @endphp
 
           @forelse($customer_transition as $ct)
                             @php
@@ -147,7 +141,7 @@
                                 $d2= strtotime($ct->end_date);
                                 $wai= $d2 - $d1;
                                 $nas = floor($wai/86400);
-                                if($nas < 0){
+                                if($nas < 30){
                                   $notif++;
                                 }else{
                                   $no;
